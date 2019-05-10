@@ -1,0 +1,41 @@
+<view class='container'>
+  <!-- 用户信息 -->
+  <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
+    <!-- 头像框+用户名 -->
+    <view wx:if="{{userInfo}}" class='userinfo'>
+      <view>
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFill"></image>
+      </view>
+      <view class='userinfo-text'>
+        <text class="username">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="my_box" id='my_box1'>
+    <view class='my_box1_container'>
+      <view class="my_box1__item">盒子一
+      </view>
+      <view class="my_box1__item">盒子二
+      </view>
+      <view class="my_box1__item">盒子三
+      </view>
+    </view>
+  </view>
+  <view class='my_box' id='my_box2'>
+    <view>
+
+    </view>
+  </view>
+  <!-- 登录提示/未登录时显示 -->
+  <view class="user-feature" wx:if="{{!userInfo.nickName}}">
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn-getInfo">点击登录,解锁更多功能 </button>
+  </view>
+  <!-- 应用信息：版本号、联系作者 -->
+  <view class="app-info">
+    <van-cell-group>
+      <van-cell title="小程序版本" value="{{version}}" />
+      <van-cell title="基础库版本" value="{{libVersion}}" />
+      <van-cell title="联系作者" value="{{email}}" />
+    </van-cell-group>
+  </view>
+</view>

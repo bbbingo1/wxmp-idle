@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/add/add",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0BDDB8",
+    "navigationBarTitleText": "基于校内的闲置平台",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 50
+  },
+    "tabBar": {
+      "color": "#6e6d6b",
+      "selectedColor": "#1aaba8",
+      "borderStyle": "black",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "images/nav/home-off.png",
+          "selectedIconPath": "images/nav/home-on-b.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/add/add",
+          "iconPath": "images/nav/add-b.png",
+          "selectedIconPath": "images/nav/add-b.png",
+          "text": "发布"
+        },
+        {
+          "pagePath": "pages/my/my",
+          "iconPath": "images/nav/my-off.png",
+          "selectedIconPath": "images/nav/my-on-b.png",
+          "text": "我的"
+        }
+      ]
+    },
+  "sitemapLocation": "sitemap.json"
+}
