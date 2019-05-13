@@ -5,9 +5,9 @@ Page({
 
   data: {
     userInfo: {},
-    email: 'cy920820@gmail.com',
+    email: 'tuji101@gmail.com',
     version: 'v1.0.0',
-    libVersion: 'v2.6.2'
+    copyright: 'PickledFish_Tuji101'
   },
 
   onLoad: function (options) {

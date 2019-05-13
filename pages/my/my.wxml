@@ -10,32 +10,110 @@
         <text class="username">{{userInfo.nickName}}</text>
       </view>
     </view>
+    <!-- 登录提示/未登录时显示 -->
+    <view class="user-feature" wx:if="{{!userInfo.nickName}}">
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn-getInfo">点击登录,解锁更多功能 </button>
+    </view>
   </view>
   <view class="my_box" id='my_box1'>
-    <view class='my_box1_container'>
-      <view class="my_box1__item">盒子一
+    <view class='my_box_container' id='my_box1_container'>
+      <view class="my_box__item">
+        全部订单
       </view>
-      <view class="my_box1__item">盒子二
+      <view class="my_box__item">进行中
       </view>
-      <view class="my_box1__item">盒子三
+      <view class="my_box__item">已完成
       </view>
     </view>
   </view>
   <view class='my_box' id='my_box2'>
-    <view>
-
+    <view class='my_box_title'>我的交易
+    </view>
+    <view class='my_box_container' id='my_box2_container'>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">我发布的</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">我卖出的</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">我买到的</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">我想要的</view>
+        </navigator>
+      </view>
     </view>
   </view>
-  <!-- 登录提示/未登录时显示 -->
-  <view class="user-feature" wx:if="{{!userInfo.nickName}}">
-    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn-getInfo">点击登录,解锁更多功能 </button>
+  <view class='my_box' id='my_box3'>
+    <view class='my_box_title'>我的推广
+    </view>
+    <view class='my_box_container' id='my_box3_container'>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default2.png" background-size="cover"></image>
+          <view class="txt">梨颜理财</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default6.png" background-size="cover"></image>
+          <view class="txt">新冬方</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default26.png" title="挖掘技术哪家强" background-size="cover"></image>
+          <view class="txt">挖掘机</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='my_box' id='my_box4'>
+    <view class='my_box_title'>我的服务
+    </view>
+    <view class='my_box_container' id='my_box4_container'>
+      <!-- <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">我的地址</view>
+        </navigator>
+      </view> -->
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">常见问题</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">电话客服</view>
+        </navigator>
+      </view>
+      <view class="my_box__item">
+        <navigator url="" class="a">
+          <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
+          <view class="txt">投诉建议</view>
+        </navigator>
+      </view>
+    </view>
   </view>
   <!-- 应用信息：版本号、联系作者 -->
-  <view class="app-info">
-    <van-cell-group>
-      <van-cell title="小程序版本" value="{{version}}" />
-      <van-cell title="基础库版本" value="{{libVersion}}" />
-      <van-cell title="联系作者" value="{{email}}" />
-    </van-cell-group>
+  <view class='about'>
+    <view class="version" style='margin-top:10rpx;font-size:18rpx;'>Copyright © 2019 {{copyright}}</view>
+    <view class='version' style='height:20rpx;line-height:20rpx;font-size:16rpx;font-style: oblique;'>Powered by {{copyright}} {{version}}</view>
+    <view style="height:12rpx;width:100%;"></view>
   </view>
 </view>
