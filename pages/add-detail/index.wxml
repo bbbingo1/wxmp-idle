@@ -1,0 +1,41 @@
+<!--pages/add-detail/index.wxml-->
+<view class='container'>
+  <view class='block1'>
+    <navigator class='img-submit' hover-class='none' wx:if="{{!imgList.length}}">
+      <image class="img" src="/images/camera.png"></image>
+      <view class='txt'>添加图片</view>
+    </navigator>
+    <view class='img-container' wx:if="{{imgList.length}}">
+      <navigator class='img-add'>
+        <image class="img" src="/images/camera.png"></image>
+        <view class='txt'>添加图片</view>
+      </navigator>
+      <view wx:for="{{imgList}}" class='avatar'>
+        <image class="img" src="{{item.img}}">
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='block2'>
+    <view class='title-block'>
+      <input class="title-input" placeholder-style="font-weight:500" placeholder='在此填写宝贝名称，如：“ja高级程序设计”' maxlength='30' />
+    </view>
+    <view class='description-block'>
+      <textarea auto-height class="description-input" placeholder="在此描述你的宝贝：如品牌，规格，成色，购买渠道，转手原因等"></textarea>
+    </view>
+  </view>
+  <view class='block3'>
+    <view class='price-block'>
+      参考价格：
+      <view class='price'>
+        ￥
+        <input class='price-inpuit' type='digit' placeholder='' />
+      </view>
+    </view>
+  </view>
+  <view class='submit-container'>
+    <view class='submit'>
+      发布
+    </view>
+  </view>
+</view>

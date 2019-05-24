@@ -1,16 +1,31 @@
-// pages/add/add.js
+// pages/add-detail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imgList: [
+      // {
+      //   img: "/images/idea.png"
+      // },
+      // {
+      //   img: "/images/Rush.png"
+      // },
+      // {
+      //   img: "/images/Rush.png"
+      // },
+      // {
+      //   img: "/images/Rush.png"
+      // }
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**

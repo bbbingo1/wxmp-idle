@@ -1,5 +1,4 @@
-@import "/style/weui.wxss";
-@import "/style/common.wxss";
+@import "style/common.wxss";
 
 /**app.wxss**/
 .container {

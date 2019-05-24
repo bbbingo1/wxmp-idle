@@ -1,0 +1,149 @@
+@import "../../style/weui.wxss";
+/* pages/add-detail/index.wxss */
+
+.submit-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.block1, .block2 {
+  background: #fff;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.block1 {
+  border-top: 1rpx solid #ccc;
+}
+
+.block3 {
+  margin-top: 10rpx;
+  background: #fff;
+  width: 100%;
+}
+
+/* 最顶部图片编辑 */
+
+.img-submit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50rpx 40% 15rpx 40%;
+}
+
+.img-submit .img {
+  margin: 0 auto;
+  width: 80rpx;
+  height: 80rpx;
+  /* color: rgb(32, 32, 32); */
+}
+
+.img-submit .txt {
+  margin: 15rpx 0;
+  font-size: 28rpx;
+  letter-spacing: 3rpx;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 2.5%;
+}
+
+.img-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160rpx;
+  width: 160rpx;
+  overflow: hidden;
+  padding: 10rpx;
+  background: rgba(240, 240, 240, 0.726);
+}
+
+.img-add .img{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 15rpx;
+}
+.img-add .txt {
+  margin: 15rpx 0;
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+  color: rgb(53, 53, 53);
+}
+.avatar{
+  margin:5rpx;
+}
+.avatar .img {
+  margin: 0 auto;
+  width: 170rpx;
+  height: 170rpx;
+  /* color: rgb(32, 32, 32); */
+}
+
+/* 文本框 */
+  /* 标题文本框 */
+.title-block{
+  margin: 10rpx;
+  border-bottom:solid thin rgb(216, 216, 216); 
+  font-size: 28rpx;
+  /* letter-spacing: 5rpx； */
+}
+.title-input{
+  padding: 16rpx 16rpx;
+  font-weight: 600;
+  width: 90%;
+}
+  /* 描述文本框 */
+.description-block{
+  margin: 10rpx;
+  font-size: 28rpx;
+  letter-spacing: 5rpx；
+}
+.description-input{
+  padding: 16rpx 16rpx;
+  width: 95%;
+  min-height: 150rpx;
+  maxlength:-1;
+}
+ /* 价格文本框 */
+.price-block{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10rpx;
+  font-size: 32rpx;
+  letter-spacing: 5rpx；
+}
+.price{
+  display: flex;
+  float: right;
+  flex-direction: row;
+  justify-content: center;
+
+}
+/* 提交按钮 */
+.submit {
+  box-sizing: border-box;
+  width: 90%;
+  padding: 20rpx;
+  margin: 10rpx;
+  text-align: center;
+  background: #f66;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+}

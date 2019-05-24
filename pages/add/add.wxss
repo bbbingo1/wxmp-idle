@@ -1,0 +1,32 @@
+/* pages/add/add.wxss */
+
+#container {
+  margin: 90rpx auto;
+  align-items: center;
+}
+
+.add-item, .edit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+  color: #2d527c;
+  margin: 60rpx;
+  padding: 10rpx;
+}
+
+.add-item:active, .edit-item:active{
+  background: rgba(168, 190, 204, 0.555);
+}
+
+.icon {
+  height: 200rpx;
+  width: 200rpx;
+  margin: 20rpx;
+}
+
+.txt {
+  font-size: 40rpx;
+}

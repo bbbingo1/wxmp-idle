@@ -7,6 +7,7 @@ Page({
     userInfo: {},
     email: 'tuji101@gmail.com',
     version: 'v1.0.0',
+    libVersion: 'v2.6.6',
     copyright: 'PickledFish_Tuji101'
   },
 
@@ -46,6 +47,12 @@ Page({
     setStorageSync('userInfo', userInfo)
     this.setData({
       userInfo
+    })
+  },
+
+  getOrder: function(e){
+    wx.navigateTo({
+      url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
     })
   }
 })

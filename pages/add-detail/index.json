@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布",
+  "navigationBarBackgroundColor": "white",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 50
+}

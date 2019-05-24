@@ -1,0 +1,26 @@
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{index == currentTab? ' active ' :' '}}" wx:for-items="{{statusType}}" bindtap="swichNav" wx:key="{{index}}" data-current="{{index}}">
+      {{item}}
+    </view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2,3]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="http://ookzqad11.bkt.clouddn.com/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">欢颜</view>
+              <view class="tag">知名情感博主</view>
+              <view class="answerHistory">134个回答，2234人听过 </view>
+            </view>
+            <navigator url="/pages/askExpert/expertDetail" class="askBtn">问TA</navigator>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

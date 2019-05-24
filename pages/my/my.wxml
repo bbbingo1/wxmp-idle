@@ -31,28 +31,28 @@
     </view>
     <view class='my_box_container' id='my_box2_container'>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <view hover-class="none" bindtap='getOrder' data-type="0" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">我发布的</view>
-        </navigator>
+        </view>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <view hover-class="none" bindtap='getOrder' data-type="1" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">我卖出的</view>
-        </navigator>
+        </view>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <view hover-class="none" bindtap='getOrder' data-type="2" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">我买到的</view>
-        </navigator>
+        </view>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <view hover-class="none" bindtap='getOrder' data-type="3" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">我想要的</view>
-        </navigator>
+        </view>
       </view>
     </view>
   </view>
@@ -61,19 +61,19 @@
     </view>
     <view class='my_box_container' id='my_box3_container'>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="/pages/slider/index" class="a">
           <image class="icon" src="/images/default2.png" background-size="cover"></image>
           <view class="txt">梨颜理财</view>
         </navigator>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default6.png" background-size="cover"></image>
           <view class="txt">新冬方</view>
         </navigator>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default26.png" title="挖掘技术哪家强" background-size="cover"></image>
           <view class="txt">挖掘机</view>
         </navigator>
@@ -85,25 +85,25 @@
     </view>
     <view class='my_box_container' id='my_box4_container'>
       <!-- <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">我的地址</view>
         </navigator>
       </view> -->
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">常见问题</view>
         </navigator>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">电话客服</view>
         </navigator>
       </view>
       <view class="my_box__item">
-        <navigator url="" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default_icon.png" background-size="cover"></image>
           <view class="txt">投诉建议</view>
         </navigator>

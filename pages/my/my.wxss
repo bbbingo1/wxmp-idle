@@ -83,7 +83,7 @@ page {
   flex-direction: column;
   justify-content: center;
   background-color: rgb(255, 255, 255);
-  border-radius: 10rpx;
+  border-radius: 18rpx;
   box-sizing: border-box;
   box-shadow: 2px 2px 8px #ccc;
   z-index: 2;

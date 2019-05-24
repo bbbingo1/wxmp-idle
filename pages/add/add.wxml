@@ -1,0 +1,13 @@
+<!--pages/add/add.wxml-->
+<view class='container' id='container'>
+  <navigator class='add-item' url="/pages/add-detail/index">
+    <image class="icon" src="/images/picture-1.png" background-size="cover"></image>
+    <view class="txt">添加发布</view>
+  </navigator>
+  <navigator class='edit-item' url="/pages/slider/index">
+    <image class="icon" src="/images/edit.png" background-size="cover"></image>
+    <view class="txt">编辑发布</view>
+  </navigator>
+  <view class='cu-bar'>
+  </view>
+</view>
