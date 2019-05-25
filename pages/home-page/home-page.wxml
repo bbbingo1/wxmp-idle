@@ -23,6 +23,7 @@
 <brickLayout
   dataSet="{{dataSet}}" 
 	option="{{brick_option}}"
+	bind:tapCard="tapCard"
 	class="margin-top"
 />
 <!--瀑布流插件结束-->

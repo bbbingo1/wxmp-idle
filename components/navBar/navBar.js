@@ -6,7 +6,13 @@ Page({
 				name:"附近",
 			},{
 					name:"推荐",
-				},{
+			},{
+				name:"食品",
+			},{
+				name:"数码用品",
+			},{
+				name:"服饰",
+			},{
 				name:"手机",
 			},{
 				name:"图书",
@@ -29,6 +35,8 @@ Page({
 			}]
     },
     tabSelect(e) {
+			console.log(e);
+			
       this.setData({
         TabCur: e.currentTarget.dataset.id,
         scrollLeft: (e.currentTarget.dataset.id-1)*60
