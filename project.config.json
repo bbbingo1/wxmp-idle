@@ -15,7 +15,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
-	"appid": "wx4c06dc3e6fbc9a38",
+	"appid": "wx381f340cc87bd020",
 	"projectname": "%E9%97%B2%E7%BD%AE%E5%B9%B3%E5%8F%B0",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -52,7 +52,7 @@
 				{
 					"id": -1,
 					"name": "首页",
-					"pathName": "pages/index/index",
+					"pathName": "pages/home-page/home-page",
 					"query": ""
 				},
 				{

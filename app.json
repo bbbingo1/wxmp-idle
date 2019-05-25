@@ -8,7 +8,8 @@
     "pages/slider/index",
     "pages/add-detail/index",
     "pages/order-list/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/home-page/home-page"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +26,7 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home-page/home-page",
         "iconPath": "images/nav/home-off.png",
         "selectedIconPath": "images/nav/home-on-b.png",
         "text": "首页"
