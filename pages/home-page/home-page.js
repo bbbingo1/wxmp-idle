@@ -1,4 +1,4 @@
-// pages/add/add.js
+// pages/home-page/home-page.js
 Page({
 
     /**
