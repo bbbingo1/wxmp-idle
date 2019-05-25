@@ -19,3 +19,10 @@
 <!--导航条开始-->
 <navBar></navBar>
 <!--导航条结束-->
+<!--瀑布流插件开始-->
+<brickLayout
+  dataSet="{{dataSet}}" 
+	option="{{brick_option}}"
+	class="margin-top"
+/>
+<!--瀑布流插件结束-->

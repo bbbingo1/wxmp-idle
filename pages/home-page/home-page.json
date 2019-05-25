@@ -3,6 +3,7 @@
         "swiper":"../../components/swiper/swiper",
         "List":"../../components/List/List",
         "Advertisement":"../../components/Advertisement/Advertisement",
-        "navBar":"../../components/navBar/navBar"
+        "navBar":"../../components/navBar/navBar",
+        "brickLayout":"plugin://brickLayout/brickLayout"
     }
 }
