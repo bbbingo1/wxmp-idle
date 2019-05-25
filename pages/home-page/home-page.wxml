@@ -1,7 +1,7 @@
 <view class="cu-bar search bg-white">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
-      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+      <input type="text" placeholder="搜索商品" confirm-type="search"></input>
   </view>
   <view class="action">
     <button class="cu-btn bg-green shadow-blur round">搜索</button>
@@ -11,8 +11,11 @@
 <swiper></swiper>
 <!--轮播图结束-->
 <!--宫格列表开始-->
-<List></List>
+<List class="margin-top"></List>
 <!--宫格列标结束-->
 <!--广告开始-->
 <Advertisement></Advertisement>
 <!--广告结束-->
+<!--导航条开始-->
+<navBar></navBar>
+<!--导航条结束-->

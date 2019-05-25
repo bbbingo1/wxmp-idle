@@ -1,6 +1,6 @@
   <view class="cu-bar bg-white solid-bottom margin-top">
     <view class="action">
-      <text class="cuIcon-title text-orange "></text> 商品分类
+      <text class="cuIcon-titles text-orange"></text>  商品分类
     </view>
   </view>  
   <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">

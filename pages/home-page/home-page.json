@@ -2,6 +2,7 @@
     "usingComponents": {
         "swiper":"../../components/swiper/swiper",
         "List":"../../components/List/List",
-        "Advertisement":"../../components/Advertisement/Advertisement"
+        "Advertisement":"../../components/Advertisement/Advertisement",
+        "navBar":"../../components/navBar/navBar"
     }
 }

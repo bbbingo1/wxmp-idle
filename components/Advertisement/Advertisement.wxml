@@ -1,11 +1,11 @@
-  <view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="cu-bar bg-white solid-bottom">
     <view class="action">
-      <text class="cuIcon-title text-blue"></text>好物享优惠
+      <text class="cuIcon-titles text-blue"></text> 好物享优惠
     </view>
     <view class="action"></view>
   </view>
   <view class="bg-white padding">
     <view class="grid col-3 grid-square">
-      <view class="bg-img" wx:for="{{8}}" wx:key style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);"></view>
+      <view class="bg-img" wx:for="{{6}}" wx:key style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);"></view>
     </view>
   </view>
