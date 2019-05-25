@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "swiper":"../../components/swiper/swiper",
-        "List":"../../components/List/List"
+        "List":"../../components/List/List",
+        "Advertisement":"../../components/Advertisement/Advertisement"
     }
 }

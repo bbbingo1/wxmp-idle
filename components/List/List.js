@@ -1,22 +1,26 @@
 Page({
     data: {
-        StatusBar: app.globalData.StatusBar,
-        CustomBar: app.globalData.CustomBar,
+
         iconList: [{
-          icon: 'cardboardfill',
+          icon: 'read',
           color: 'red',
           badge: 120,
-          name: 'VR'
+          name: '书籍'
         }, {
-          icon: 'recordfill',
+          icon: 'mobilefill',
           color: 'orange',
           badge: 1,
-          name: '录像'
+          name: '手机'
         }, {
-          icon: 'picfill',
+          icon: 'game',
           color: 'yellow',
           badge: 0,
-          name: '图像'
+          name: '游戏'
+        },{
+          icon: 'taxi',
+          color: 'mauve',
+          badge: 0,
+          name: '汽车'
         }, {
           icon: 'noticefill',
           color: 'olive',
@@ -28,10 +32,10 @@ Page({
           badge: 0,
           name: '排行榜'
         }, {
-          icon: 'clothesfill',
+          icon: 'redpacket_fill',
           color: 'blue',
           badge: 0,
-          name: '皮肤'
+          name: '返现'
         }, {
           icon: 'discoverfill',
           color: 'purple',
@@ -47,13 +51,8 @@ Page({
           color: 'purple',
           badge: 0,
           name: '问答'
-        }, {
-          icon: 'brandfill',
-          color: 'mauve',
-          badge: 0,
-          name: '版权'
         }],
-        gridCol:3,
+        gridCol:4,
         skin: false
       },
 })
