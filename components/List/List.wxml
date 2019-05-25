@@ -1,0 +1,24 @@
+  <view class="cu-modal {{modalName=='gridModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="gridchange">
+        <view class="cu-list menu text-left">
+          <view class="cu-item" wx:for="{{3}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{index +3}} 列</view>
+              <radio class="round" value="{{index +3}}" checked="{{gridCol==index+3}}"></radio>
+            </label>
+          </view>
+        </view>
+      </radio-group>
+      <view class="cu-list menu text-left solid-top">
+        <view class="cu-item">
+          <view class="content">
+            <text class="text-grey">边框</text>
+          </view>
+          <view class="action">
+            <switch bindchange="gridswitch"></switch>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
