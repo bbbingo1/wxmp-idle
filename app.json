@@ -9,7 +9,8 @@
     "pages/add-detail/index",
     "pages/order-list/index",
     "pages/login/index",
-    "pages/home-page/home-page"
+    "pages/home-page/home-page",
+    "pages/Search/Search"
   ],
   "window": {
     "backgroundTextStyle": "light",

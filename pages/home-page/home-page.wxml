@@ -4,7 +4,7 @@
       <input type="text" placeholder="搜索商品" confirm-type="search"></input>
   </view>
   <view class="action">
-    <button class="cu-btn bg-green shadow-blur round">搜索</button>
+    <button class="cu-btn bg-green shadow-blur round"  bindtouchstart="homeSearch">搜索</button>
   </view>
 </view>
 <!--轮播图开始-->

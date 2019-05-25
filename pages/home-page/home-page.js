@@ -133,5 +133,13 @@ Page({
      */
     onShareAppMessage: function () {
   
-    }
+    },
+    /**
+     * 用户点击首页搜索
+     */
+    homeSearch: function(){
+        wx.navigateTo({
+            url: '/pages/Search/Search'
+          })
+    }   
   })
