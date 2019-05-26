@@ -38,6 +38,7 @@ function login(account, password) {
         success(res) {
           console.log(res)
           if (res.data.seccess == true) {
+            wx.setStorageSync(status, 1)
             result = 1;
           } else if (res.data.success = false) {
             result = res.data;

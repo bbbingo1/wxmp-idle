@@ -12,14 +12,6 @@ Page({
     orderList: [
       [ //假数据
         {
-          id:'',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-        {
           id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
@@ -43,24 +35,6 @@ Page({
           cherish: 404,
           watch: 1314
         },
-        {
-          id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-        {
-          id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-      ],
-      [ //假数据
         {
           id: '',
           img: "/images/idea.png",
@@ -86,6 +60,7 @@ Page({
           watch: 1314
         },
       ],
+      [],
       [],
       [ //假数据
         {
@@ -174,10 +149,17 @@ Page({
   },
 
   //跳转
-  getOrder: function (e) {
+  getOrder: function(e) {
     wx.navigateTo({
       url: '/pages/goods-detail/index?id=' + e.currentTarget.dataset.id,
     })
+  },
+
+  //跳转聊天
+  tapChat: function () {
+    wx.navigateTo({
+      url: "/components/chat/chat"
+    });
   },
 
   /**

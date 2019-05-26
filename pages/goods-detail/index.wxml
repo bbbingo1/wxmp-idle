@@ -44,7 +44,7 @@
       <view class='seller'>
         <image src='{{seller.avatar}}'></image>
         <view>{{seller.name}}</view>
-        <view class='contact'>联系报价</view>
+        <view class='contact' bindtap="tapChat">联系报价</view>
       </view>
       <view class='seller-descripe'>{{seller.descripe}}</view>
     </view>

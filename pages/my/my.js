@@ -68,18 +68,18 @@ Page({
   },
   //跳转
   getOrder: function(e) {
-    let status = checkLogin();
-    if (!status) {
-      wx.navigateTo({
-        url: '/pages/login/index',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
-      })
-    } else {
+    // let status = checkLogin();
+    // if (!status) {
+    //   wx.navigateTo({
+    //     url: '/pages/login/index',
+    //     success: function(res) {},
+    //     fail: function(res) {},
+    //     complete: function(res) {},
+    //   })
+    // } else {
       wx.navigateTo({
         url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
       })
-    }
+    // }
   }
 })

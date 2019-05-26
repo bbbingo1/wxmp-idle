@@ -69,7 +69,7 @@ Page({
     })
   },
   // 删除图片
-  deleteImg: function (e) {
+  deleteImg: function(e) {
     var imgList = this.data.imgList;
     var index = e.currentTarget.dataset.index;
     imgList.splice(index, 1);
@@ -79,11 +79,11 @@ Page({
     });
   },
   // 预览图片
-  previewImg: function (e) {
+  previewImg: function(e) {
     //获取当前图片的下标
     var index = e.currentTarget.dataset.index;
     //所有图片
-    var imgList = this.data.imgList.map(function(item){
+    var imgList = this.data.imgList.map(function(item) {
       return item.img;
     });
 
@@ -93,6 +93,10 @@ Page({
       //所有图片
       urls: imgList
     })
+  },
+
+  submitForm() {
+    // let 
   },
 
   /**
