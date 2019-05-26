@@ -1,0 +1,19 @@
+/* 未登录时提示view */
+.user-feature {
+  width: 100%;
+  margin-top: 15rpx;
+  z-index: 3;
+}
+
+.app-info {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.btn-getInfo {
+  width: 100%;
+  border-radius: 0;
+  background: #fff;
+  font-size: 30rpx;
+  color: #555;
+}

@@ -1,4 +1,9 @@
-import { getStorageSync, setStorageSync } from '../../api/wechat'
+import {
+  getStorageSync,
+  setStorageSync
+} from '../../api/wechat'
+var loginTip = require('../../template/login-tip/login-tip.js');
+
 let app = getApp()
 
 Page({
@@ -11,7 +16,7 @@ Page({
     copyright: 'PickledFish_Tuji101'
   },
 
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.setData({
       background_color: app.globalData.globalBGColor,
       bgRed: app.globalData.bgRed,
@@ -42,15 +47,15 @@ Page({
     }
   },
 
-  onGotUserInfo(e) {
+  onGotUserInfo: function(e) {
     let userInfo = e.detail.userInfo
     setStorageSync('userInfo', userInfo)
     this.setData({
       userInfo
-    })
+    })  
   },
-
-  getOrder: function(e){
+  //跳转
+  getOrder: function(e) {
     wx.navigateTo({
       url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
     })
