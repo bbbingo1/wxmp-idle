@@ -1,8 +1,9 @@
+<import src="../../template/login-tip/login-tip.wxml" />
 <view class='container'>
   <!-- 用户信息 -->
   <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
     <!-- 头像框+用户名 -->
-    <view wx:if="{{userInfo}}" class='userinfo'>
+    <view class='userinfo'>
       <view>
         <image class="avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFill"></image>
       </view>
@@ -10,12 +11,9 @@
         <text class="username">{{userInfo.nickName}}</text>
       </view>
     </view>
-    <!-- 登录提示/未登录时显示 -->
-    <view class="user-feature" wx:if="{{!userInfo.nickName}}">
-      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn-getInfo">点击登录,解锁更多功能 </button>
-    </view>
+    <template is="logintip" bind:myEvent="onGotUserInfo" wx:if="{{!userInfo.nickName}}"></template>
   </view>
-  <view class="my_box" id='my_box1'>
+  <view class="my_box" id='my_box1' wx:if="{{userInfo.nickName}}">
     <view class='my_box_container' id='my_box1_container'>
       <view class="my_box__item">
         全部订单
@@ -26,7 +24,7 @@
       </view>
     </view>
   </view>
-  <view class='my_box' id='my_box2'>
+  <view class='my_box' id='my_box2' wx:if="{{userInfo.nickName}}">
     <view class='my_box_title'>我的交易
     </view>
     <view class='my_box_container' id='my_box2_container'>
@@ -56,7 +54,7 @@
       </view>
     </view>
   </view>
-  <view class='my_box' id='my_box3'>
+  <view class='my_box' id='my_box3' wx:if="{{userInfo.nickName}}">
     <view class='my_box_title'>我的推广
     </view>
     <view class='my_box_container' id='my_box3_container'>
@@ -80,7 +78,7 @@
       </view>
     </view>
   </view>
-  <view class='my_box' id='my_box4'>
+  <view class='my_box' id='my_box4' wx:if="{{userInfo.nickName}}">
     <view class='my_box_title'>我的服务
     </view>
     <view class='my_box_container' id='my_box4_container'>

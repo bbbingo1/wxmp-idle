@@ -1,2 +1,60 @@
 <!--pages/goods-detail/index.wxml-->
-<text>pages/goods-detail/index.wxml</text>
+<view class='container'>
+  <view class='block1'>
+    <!-- 轮播图 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" style="height:600rpx">
+      <block wx:for="{{detail.imgs}}" wx:key="*this" wx:if="{{index<6}}">
+        <swiper-item>
+          <image class="swiper-item" src='{{item}}'></image>
+        </swiper-item>
+        <!-- <view class='swiper-doc' style='background:blue;'>{{index}}/1231</view> -->
+      </block>
+    </swiper>
+    <!-- 价格+标题 -->
+    <view class='block-inner-containner'>
+      <view class='item-price'>￥<view class='price'>{{detail.price}}</view>元</view>
+      <view class='item-title'>{{detail.title}}</view>
+    </view>
+  </view>
+  <view class='block2'>
+    <view class='block-inner-containner'>
+      <!-- 基本信息 -->
+      <view class='block-title'>基本信息</view>
+      <view class='detail-item'>
+        <view class='item-type'>商品类别：</view>
+        <view class='type'>{{detail.goods_type}}</view>
+      </view>
+      <view>
+        <view class='item-descripe'>商品描述：</view>
+        <view class='descripe'>{{detail.describe}}</view>
+      </view>
+      <!-- 图片 -->
+      <view class='imgs'>
+        <view wx:for="{{detail.imgs}}" wx:key="*this" class='goods_imgs'>
+          <image class="goods_img" src='{{item}}'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 关于卖家 -->
+  <view class='block3'>
+    <view class='block-inner-containner'>
+      <view class='block-title'>关于卖家</view>
+      <!-- 卖家信息 -->
+      <view class='seller'>
+        <image src='{{seller.avatar}}'></image>
+        <view>{{seller.name}}</view>
+        <view class='contact'>联系报价</view>
+      </view>
+      <view class='seller-descripe'>{{seller.descripe}}</view>
+    </view>
+  </view>
+  <view class='submit-container'>
+    <view class='submit-wish {{if_want.style}}'>
+      {{if_want.text}}
+    </view>
+    <view class='submit-contact'>
+      联系卖家
+    </view>
+  </view>
+</view>

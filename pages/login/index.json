@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "绑定学号",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#f3f3f3",
+  "backgroundColor": "white",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true
 }

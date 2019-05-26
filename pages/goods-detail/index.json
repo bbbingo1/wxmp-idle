@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "商品详情",
+  "navigationBarBackgroundColor": "white",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 50
 }
