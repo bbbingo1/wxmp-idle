@@ -151,7 +151,6 @@ Page({
 				scrollLeft: (e.currentTarget.dataset.id-1)*60,
 				dataSet: this.data.dataList[this.data.navList[e.currentTarget.dataset.id]]
 			})
-			
 		},
 tapCard: function (event) {
 	const cardId =  event.detail.card_id
