@@ -5,14 +5,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        brick_option:{
-            backgroundColor:'#000',
-            fontColor:'#333',
-            icon:{
-                fill:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558804821537&di=8ee6235288fcda4f283e7c00b6559afd&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fcf3f35b88beb7236f6fcdb6a9c2f0729a0a1b4313911-ie3tVL_fw658',
-                default:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558849679034&di=55382fff9d2259fd206e6250f34407d2&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F04%2F14%2F39f94def7f06c8d438deff42a846ce27.jpg',
-            }
-        },
         dataList:{
             nearby:[],
             Recommend:[],
@@ -29,165 +21,92 @@ Page({
             Outdoorsport:[],
             Ticketing:[],
             Computer:[]
-        },  
-        dataSet:[
-            {
-                id: '1',
-                content:
-                  'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                backgroundColor: '#fff',
-                time: 1533106010,
-                likedCount: 0,
-                liked: false,
-                user: {
-                  avatar: 'user_avatar_url',
-                  username: 'Minya Chan',
-                  userId: '1'
-                },
-                images: [
-                   'pic_url', 'pic_url', 'pic_url'
-                 ]
-              },
-              {
-                id: '2',
-                content:
-                  'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                backgroundColor: '#fff',
-                time: 1533106010,
-                likedCount: 0,
-                liked: false,
-                user: {
-                  avatar: 'user_avatar_url',
-                  username: 'Minya Chan',
-                  userId: '1'
-                },
-                images: [
-                   'pic_url', 'pic_url'
-                 ]
-              },
-              {
-                id: '1',
-                content:
-                  'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                backgroundColor: '#fff',
-                time: 1533106010,
-                likedCount: 0,
-                liked: false,
-                user: {
-                  avatar: 'user_avatar_url',
-                  username: 'Minya Chan',
-                  userId: '1'
-                },
-                images: [
-                   'pic_url', 'pic_url', 'pic_url'
-                 ]
-              },
-              {
-                id: '1',
-                content:
-                  'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                backgroundColor: '#fff',
-                time: 1533106010,
-                likedCount: 0,
-                liked: false,
-                user: {
-                  avatar: 'user_avatar_url',
-                  username: 'Minya Chan',
-                  userId: '1'
-                },
-                images: [
-                   'pic_url', 'pic_url', 'pic_url'
-                 ]
-              }
-            ]
+    },  
     },
     addList: function(data,index){
-          for(let i = 0;i < data.length;i++){
+        for(let i = 0;i < data.length;i++){
             let item ={
-                id: '1',
-                content:
-                  '',
-                backgroundColor: '#34d058',
-                time: 1533106010,
-                likedCount: 0,
-                liked: false,
-                user: {
-                  avatar: '',
-                  username: '',
-                  userId: '1'
-                },
-                images: [
-                   
-                 ]
-              };
-              item.id = i + 1;
-              item.content = data[i].property.name;
-              item.user.username = data[i].poster.name;
-              item.images.push(data[i].main_img);
-              item.likedCount = data[i].prices;
+                    id: '1',
+                    content:
+                        '',
+                    backgroundColor: '#34d058',
+                    time: 1533106010,
+                    likedCount: 0,
+                    liked: false,
+                    user: {
+                        avatar: '',
+                        username: '',
+                        userId: '1'
+                    },
+                    images: [
+                         
+                     ]
+                };
+                item.id = i + 1;
+                item.content = data[i].property.name;
+                item.user.username = data[i].poster.name;
+                item.images.push(data[i].main_img);
+                item.likedCount = data[i].prices;
             this.dataList[index].push(item);
-          }
-    },
-    loadList: function(){   //加载首页瀑布流数据
-        var dataList2 = [];
-        wx.request({    //发送请求
+        }
+},
+loadList: function(){   //加载首页瀑布流数据
+    var dataList2 = [];
+    wx.request({    //发送请求
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
             type:'get',
             data: {
-              page: 0,
-              type: 1,
+                type: 1,
             },
             header: {
-              'content-type': 'application/json' // 默认值
+                'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data);
-              dataList2.push(res.data);
+                console.log(res.data);
+                dataList2.push(res.data);
             }
-        });
-        wx.request({    //发送请求
+    });
+    wx.request({    //发送请求
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
             type:'get',
             data: {
-              page: 0,
-              type: 1,
+                type: 1,
             },
             header: {
-              'content-type': 'application/json' // 默认值
+                'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data)
-              dataList2.push(res.data);
+                console.log(res.data)
+                dataList2.push(res.data);
             }
-        });
+    });
 
-        wx.request({    //发送请求
+    wx.request({    //发送请求
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
             type:'get',
             data: {
-              page: 0,
-              type: 2,
+                type: 2,
             },
             header: {
-              'content-type': 'application/json' // 默认值
+                'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data);
-              dataList2.push(res.data);
+                console.log(res.data);
+                dataList2.push(res.data);
             }
-        });
-        this.addList(dataList2[0],0);
-        this.addList(dataList2[0],1);
-        this.addList(dataList2[0],2);
-        this.addList(dataList2[2],3);
-        this.addList(dataList2[1],4);
+    });
+    this.addList(dataList2[0],0);
+    this.addList(dataList2[0],1);
+    this.addList(dataList2[0],2);
+    this.addList(dataList2[2],3);
+    this.addList(dataList2[1],4);
 
-    },
+},
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.loadList();
+      this.loadList();
     },
   
     /**
@@ -249,9 +168,4 @@ Page({
     /**
      * 用户点击瀑布流事件
      */
-    tapCard: function (event) {
-        const cardId =  event.detail.card_id
-        // code here.
-        console.log(event);
-      },   
   })

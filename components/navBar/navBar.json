@@ -1,6 +1,6 @@
 {
     "component":true,
     "usingComponents": {
-
+			"brickLayout":"plugin://brickLayout/brickLayout"
     }
   }

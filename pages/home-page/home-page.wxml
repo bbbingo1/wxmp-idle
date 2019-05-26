@@ -17,14 +17,8 @@
 <Advertisement></Advertisement>
 <!--广告结束-->
 <!--导航条开始-->
-<navBar></navBar>
+<navBar dataList="dataList"></navBar>
 <!--导航条结束-->
 <!--瀑布流插件开始-->
-<brickLayout
-  dataSet="{{dataSet}}" 
-	option="{{brick_option}}"
-	bind:tapCard="tapCard"
-	class="margin-top text-black text-center"
-	style="color:black!important"
-/>
+
 <!--瀑布流插件结束-->

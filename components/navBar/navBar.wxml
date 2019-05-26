@@ -1,5 +1,12 @@
-<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+<scroll-view scroll-x class="bg-white nav margin-bottom" scroll-with-animation scroll-left="{{scrollLeft}}">
   <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{navList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
     {{item.name}}
   </view>
 </scroll-view>
+  <brickLayout
+  dataSet="{{dataSet}}" 
+	option="{{brick_option}}"
+	bind:tapCard="tapCard"
+	class="margin-top text-black text-center"
+	style="color:black!important; margin-top:300px!important;"
+  />
