@@ -1,7 +1,7 @@
 <view class="cu-bar search bg-white">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
-      <input type="text" placeholder="搜索商品" confirm-type="search"></input>
+      <input type="text" placeholder="搜索商品" confirm-type="search" bindtouchstart="homeSearch"></input>
   </view>
   <view class="action">
     <button class="cu-btn bg-green shadow-blur round"  bindtouchstart="homeSearch">搜索</button>

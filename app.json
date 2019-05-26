@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home-page/home-page",
     "pages/my/my",
     "pages/index/index",
     "pages/add/add",
@@ -9,7 +10,6 @@
     "pages/add-detail/index",
     "pages/order-list/index",
     "pages/login/index",
-    "pages/home-page/home-page",
     "pages/Search/Search"
   ],
   "window": {

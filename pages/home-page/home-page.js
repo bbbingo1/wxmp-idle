@@ -76,6 +76,7 @@ loadList: function(type,page){   //加载首页瀑布流数据
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
             type:'get',
             data: {
+                page:page,
                 type: type,
             },
             header: {
@@ -109,7 +110,6 @@ loadList: function(type,page){   //加载首页瀑布流数据
                         item.likedCount = res.data.goods[i].price;
                     that.data.dataList[that.data.navList[type + 1].Egname].push(item);
                 }
-                console.log(that.data.dataList);
                 that.setData({  //必须要这样设置一下dataList的变化才会传到子组去
                     dataList:that.data.dataList
                   })
@@ -121,9 +121,9 @@ loadList: function(type,page){   //加载首页瀑布流数据
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.loadList(1,0);
-        this.loadList(2,0);
-        this.loadList(3,0);
+        this.loadList(1,1);
+        this.loadList(2,1);
+        this.loadList(3,1);
     },
   
     /**
