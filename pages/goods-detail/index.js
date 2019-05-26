@@ -56,15 +56,26 @@ Page({
       },
       success(res) {
         console.log(res.data);
-        that.data.detail.imgs = res.data.goods.imgs;
-        that.data.detail.describe = res.data.goods.describe;
-        that.data.detail.title = res.data.goods.name;
-        switch(res.data.goods.type){
+        that.data.detail.imgs = [];
+        Object.keys(res.data.picture).forEach(function(key){
+          that.data.detail.imgs.push("https://liyan6987.cn/static/" + res.data.picture[key]);
+        })
+
+        that.data.detail.describe = res.data.describe;
+        that.data.detail.title = res.data.name;
+/*         switch(res.data.type){
           case 1:that.data.detail.goods_type = "食品";break;
           case 2:that.data.detail.goods_type = "数码产品";break;
-        }
-        that.data.detail.price = res.data.goods.prices;
-        that.data.detail.name = res.data.poster.name;
+        } */
+        that.data.detail.goods_type = res.data.type;
+        that.data.detail.price = res.data.price;
+/*         that.data.seller.name = res.data.poster.name; */ 
+
+        that.setData({
+          detail : that.data.detail,
+          seller: that.data.seller
+        })
+
       }
     });
   },
@@ -101,12 +112,7 @@ Page({
     nextMargin: 0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-  },
+ 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
