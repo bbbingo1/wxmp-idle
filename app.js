@@ -9,21 +9,49 @@ App({
     // 登录
     wx.login({
       success: res => {
+        let that = this;
         // 发送 res.code 到后台换取 openId, sessionKey, unionId、
         var code = res.code;
-        var appId = "wx79915908529d16ad"
-        var secret = "bbscrect123"
+        that.globalData.js_code = code;
+        wx.setStorageSync('js_code', code)
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
-          data: {},
+          url: 'https://liyan6987.cn/auth/code_to_info',
+          data: { code:code},
+          method:'post',
           header: {
-            'content-type': 'json'
+            'content-type': 'application/x-www-form-urlencoded' // 默认值
           },
-          success: function(res) {
-            var openid = res //返回openid
-            console.log('openid为' + openid);
+          success(res) {
+            // console.log(res)
+            if (res.data.status == true){
+              that.globalData.user = res.data.user
+              // console.log(that.globalData.user)
+              wx.setStorageSync('openid', res.data.user.openid)
+            }
+            else if (res.data.status == false) {
+              wx.navigateTo({
+                url: '/pages/login/index',
+                success: function(res) {},
+                fail: function(res) {},
+                complete: function(res) {},
+              })
+            }
           }
         })
+        // var appId = "wx79915908529d16ad"
+        // var secret = ""
+        // console.log(code)
+        // wx.request({
+        //   url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+        //   data: {},
+        //   header: {
+        //     'content-type': 'json'
+        //   },
+        //   success: function(res) {
+        //     var openid = res //返回openid
+        //     console.log('openid为' + openid);
+        //   }
+        // })
       }
     })
     // 获取用户信息
@@ -33,7 +61,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              console.log(res)
+              // console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -51,8 +79,10 @@ App({
   },
   globalData: {
     userInfo: null,
+    user:null,
     openId: null,
     studentId: null,
+    js_code:null,
     globalBGColor: '#0BDDB8 ',
     bgRed: 11,
     bgGreen: 221,

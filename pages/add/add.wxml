@@ -4,7 +4,7 @@
     <image class="icon" src="/images/picture-1.png" background-size="cover"></image>
     <view class="txt">添加发布</view>
   </navigator>
-  <navigator class='edit-item' url="/pages/slider/index">
+  <navigator class='edit-item' url="">
     <image class="icon" src="/images/edit.png" background-size="cover"></image>
     <view class="txt">编辑发布</view>
   </navigator>

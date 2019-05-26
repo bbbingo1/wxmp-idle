@@ -1,17 +1,15 @@
 {
   "pages": [
+    "pages/home-page/home-page",
     "pages/my/my",
-    "pages/index/index",
+    "pages/order-list/index",
     "pages/add/add",
     "pages/goods-detail/index",
     "pages/logs/logs",
     "pages/slider/index",
     "pages/login/index",
     "pages/add-detail/index",
-    "pages/order-list/index",
-    "pages/login/index",
-    "pages/home-page/home-page",
-    "pages/Search/Search",
+    "pages/Search/Search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,5 +51,5 @@
       "version": "0.2.0",
       "provider": "wx3c042630f3cdc175"
     }
-}
+  }
 }

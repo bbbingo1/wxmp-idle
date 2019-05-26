@@ -2,6 +2,9 @@ import {
   getStorageSync,
   setStorageSync
 } from '../../api/wechat'
+import {
+  checkLogin
+} from '../../api/http'
 var loginTip = require('../../template/login-tip/login-tip.js');
 
 let app = getApp()
@@ -52,12 +55,31 @@ Page({
     setStorageSync('userInfo', userInfo)
     this.setData({
       userInfo
-    })  
+    })
+    let status = checkLogin();
+    if (!status) {
+      wx.navigateTo({
+        url: '/pages/login/index',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   },
   //跳转
   getOrder: function(e) {
-    wx.navigateTo({
-      url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
-    })
+    let status = checkLogin();
+    if (!status) {
+      wx.navigateTo({
+        url: '/pages/login/index',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
+      })
+    }
   }
 })

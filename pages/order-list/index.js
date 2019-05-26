@@ -12,6 +12,7 @@ Page({
     orderList: [
       [ //假数据
         {
+          id:'',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -19,6 +20,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -26,6 +28,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -33,6 +36,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -40,6 +44,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -47,6 +52,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -56,6 +62,7 @@ Page({
       ],
       [ //假数据
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -63,6 +70,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -70,6 +78,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
@@ -80,6 +89,7 @@ Page({
       [],
       [ //假数据
         {
+          id: '',
           img: "/images/idea.png",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
@@ -87,6 +97,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
@@ -94,6 +105,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
@@ -101,6 +113,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
@@ -108,6 +121,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
@@ -115,6 +129,7 @@ Page({
           watch: 1314
         },
         {
+          id: '',
           img: "/images/idea.png",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
@@ -157,6 +172,14 @@ Page({
       })
     }
   },
+
+  //跳转
+  getOrder: function (e) {
+    wx.navigateTo({
+      url: '/pages/goods-detail/index?id=' + e.currentTarget.dataset.id,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

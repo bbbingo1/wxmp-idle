@@ -16,7 +16,7 @@
         <!-- 有订单情况 -->
         <view wx:if="{{orderList[index].length}}">
           <block wx:for="{{orderList[index]}}" wx:key="{{index}}">
-            <view class="item-ans">
+            <view class="item-ans" data-id="{{item.id}}" bindtap='getOrder'>
               <view class="avatar">
                 <image class="img" src="{{item.img}}"></image>
               </view>
@@ -25,7 +25,7 @@
                 <view class="tag">{{item.tag}}</view>
                 <view class="answerHistory">{{item.cherish}}个想要，{{item.watch}}人看过</view>
               </view>
-              <navigator url="/pages/goods-detail/index" class="askBtn">问TA</navigator>
+              <navigator catchtap="return false;" url="" class="askBtn">问TA</navigator>
             </view>
           </block>
         </view>

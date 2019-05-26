@@ -1,5 +1,26 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
 @import "../../style/weui.wxss";
+
 /* pages/add-detail/index.wxss */
+
+.del-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 6rpx;
+  padding: 6rpx 12rpx;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 24rpx;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}
 
 .submit-container {
   display: flex;
@@ -66,76 +87,105 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 160rpx;
-  width: 160rpx;
+  height: 180rpx;
+  width: 180rpx;
   overflow: hidden;
   padding: 10rpx;
+  margin: 10rpx;
   background: rgba(240, 240, 240, 0.726);
 }
 
-.img-add .img{
+.img-add .img {
   width: 80rpx;
   height: 80rpx;
   margin-top: 15rpx;
 }
+
 .img-add .txt {
-  margin: 15rpx 0;
-  font-size: 26rpx;
-  letter-spacing: 2rpx;
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  letter-spacing: 1rpx;
   color: rgb(53, 53, 53);
 }
-.avatar{
-  margin:5rpx;
+
+.avatar {
+  position: relative;
+  height: 180rpx;
+  width: 180rpx;
+  overflow: hidden;
+  margin: 10rpx 15rpx;
 }
+
 .avatar .img {
   margin: 0 auto;
-  width: 170rpx;
-  height: 170rpx;
+  height: 180rpx;
+  width: 180rpx;
   /* color: rgb(32, 32, 32); */
 }
 
 /* 文本框 */
-  /* 标题文本框 */
-.title-block{
-  margin: 10rpx;
-  border-bottom:solid thin rgb(216, 216, 216); 
-  font-size: 28rpx;
-  /* letter-spacing: 5rpx； */
-}
-.title-input{
-  padding: 16rpx 16rpx;
-  font-weight: 600;
-  width: 90%;
-}
-  /* 描述文本框 */
-.description-block{
-  margin: 10rpx;
-  font-size: 28rpx;
-  letter-spacing: 5rpx；
-}
-.description-input{
-  padding: 16rpx 16rpx;
-  width: 95%;
-  min-height: 150rpx;
-  maxlength:-1;
-}
- /* 价格文本框 */
-.price-block{
+
+/* 标题文本框 */
+
+.title-block {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 10rpx;
-  font-size: 32rpx;
-  letter-spacing: 5rpx；
+  border-bottom: solid thin rgb(216, 216, 216);
+  font-size: 28rpx;
+  min-height: 80rpx;
+  /* letter-spacing: 5rpx； */
 }
-.price{
+
+.title-input {
+  height: auto;
+  padding: 16rpx 16rpx;
+  min-height: 60rpx;
+  font-weight: 600;
+  width: 90%;
+}
+
+/* 描述文本框 */
+
+.description-block {
+  margin: 10rpx;
+  font-size: 28rpx;
+  letter-spacing: 5rpx；;
+}
+
+.description-input {
+  padding: 16rpx 16rpx;
+  width: 95%;
+  min-height: 150rpx;
+  maxlength: -1;
+}
+
+/* 价格文本框 */
+
+.price-block {
   display: flex;
-  float: right;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+  width: 95%;
+  background-color: var(--white);
+  padding: 1rpx 30rpx;
+  min-height: 100rpx;
+  padding-right: 30rpx;
+  position: relative;
+  line-height: 60rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+
+.price {
+  display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
+
 /* 提交按钮 */
+
 .submit {
   box-sizing: border-box;
   width: 90%;

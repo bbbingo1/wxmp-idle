@@ -86,15 +86,15 @@
 }
 
 .avatar {
-  width: 130rpx;
-  height: 130rpx;
+  width: 150rpx;
+  height: 150rpx;
   position: relative;
   padding-right: 30rpx;
 }
 
 .avatar .img {
-  width: 130rpx;
-  height: 130rpx;
+  width: 150rpx;
+  height: 150rpx;
 }
 
 .avatar .doyen {
@@ -106,17 +106,17 @@
 }
 
 .expertInfo {
-  font-size: 12px;
+  font-size: 28rpx;
   flex-grow: 2;
   color: #b0b0b0;
   line-height: 1.5em;
-  width: 50%;
+  width: 48%;
 }
 
 .expertInfo .name {
-  font-size: 14px;
+  font-size: 30rpx;
   color: #000;
-  margin-bottom: 6px;
+  margin-bottom: 14rpx;
 }
 
 .askBtn {
@@ -124,7 +124,7 @@
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
-  font-size: 14px;
+  font-size: 28rpx;
   border-radius: 60rpx;
   border: 1px solid #4675f9;
   color: #4675f9;

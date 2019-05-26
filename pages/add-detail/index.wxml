@@ -1,40 +1,52 @@
 <!--pages/add-detail/index.wxml-->
 <view class='container'>
   <view class='block1'>
-    <navigator class='img-submit' hover-class='none' wx:if="{{!imgList.length}}">
+    <navigator class='img-submit' hover-class='none' bindtap='selectImage' wx:if="{{!imgList.length}}">
       <image class="img" src="/images/camera.png"></image>
       <view class='txt'>添加图片</view>
     </navigator>
     <view class='img-container' wx:if="{{imgList.length}}">
-      <navigator class='img-add'>
-        <image class="img" src="/images/camera.png"></image>
-        <view class='txt'>添加图片</view>
-      </navigator>
       <view wx:for="{{imgList}}" class='avatar'>
-        <image class="img" src="{{item.img}}">
+        <image class="img" data-index="{{index}}" bindtap="previewImg" src="{{item.img}}">
         </image>
+        <view class="bg-red del-btn" catchtap="deleteImg" data-index="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
       </view>
+      <navigator class='img-add' bindtap='selectImage' wx:if="{{imgList.length<9}}">
+        <image class="img" src="/images/camera.png"></image>
+        <view class='txt'>添加图片{{imgList.length}}/9</view>
+      </navigator>
     </view>
   </view>
   <view class='block2'>
     <view class='title-block'>
-      <input class="title-input" placeholder-style="font-weight:500" placeholder='在此填写宝贝名称，如：“ja高级程序设计”' maxlength='30' />
+      <input class="title-input" placeholder-style="font-weight:500" data-obj="title" bindinput='adInputChange' value='{{title}}' placeholder='在此填写宝贝名称，如：“ja高级程序设计”' maxlength='30' />
     </view>
     <view class='description-block'>
-      <textarea auto-height class="description-input" placeholder="在此描述你的宝贝：如品牌，规格，成色，购买渠道，转手原因等"></textarea>
+      <textarea auto-height class="description-input" value='{{descripe}}' data-obj="descripe" bindinput='adInputChange' placeholder="在此描述你的宝贝：如品牌，规格，成色，购买渠道，转手原因等"></textarea>
     </view>
   </view>
   <view class='block3'>
     <view class='price-block'>
-      参考价格：
+      <view>参考价格：￥</view>
       <view class='price'>
-        ￥
-        <input class='price-inpuit' type='digit' placeholder='' />
+        <input class='price-inpuit' data-obj="price" bindinput='adInputChange' type='digit' placeholder='' value='{{price}}' />
+      </view>
+    </view>
+    <view class='type-block'>
+      <view class="cu-form-group">
+        <view class="title">普通选择</view>
+        <picker bindchange="PickerChange" value="{{type_index}}" range="{{picker}}">
+          <view class="picker">
+            {{type_index?picker[type_index-1]:'请选择类型'}}
+          </view>
+        </picker>
       </view>
     </view>
   </view>
   <view class='submit-container'>
-    <view class='submit'>
+    <view class='submit' bindtap='submitForm'>
       发布
     </view>
   </view>

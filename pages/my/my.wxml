@@ -59,7 +59,7 @@
     </view>
     <view class='my_box_container' id='my_box3_container'>
       <view class="my_box__item">
-        <navigator hover-class="none" url="/pages/slider/index" class="a">
+        <navigator hover-class="none" url="" class="a">
           <image class="icon" src="/images/default2.png" background-size="cover"></image>
           <view class="txt">梨颜理财</view>
         </navigator>

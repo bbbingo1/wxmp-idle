@@ -7,24 +7,26 @@
     <view class="inputform">
       <form method="POST">
         <view class="account">
-          <input id="number" type='number' placeholder="学号" maxlength="20" />
+          <input id="number" type='number' placeholder="学号" maxlength="20" data-obj="number" bindinput='adInputChange' value="{{number}}" />
           <!-- <img src="../images/login/login-yonghu.png" id="customer"> -->
         </view>
         <view class="password">
-          <input id="secret" type='password' placeholder="密码" maxlength="20" />
+          <input id="secret" type='password' placeholder="密码" data-obj="password" bindinput='adInputChange' maxlength="20" value="{{password}}" />
           <!-- <img src="../images/login/login-mima.png" id="psdImg"> -->
         </view>
         <view class="boxer">
-          <label id="bear">
-            <checkbox value="" />
-          </label>
+          <checkbox-group bindchange="checkboxChange">
+            <label id="bear">
+              <checkbox value="同意" checked="{{checked}}" />
+            </label>
+          </checkbox-group>
           <cover-view>我已阅读并同意</cover-view>
           <navigator hover-class='none' class='user-agreement'>用户协议</navigator>
         </view>
       </form>
     </view>
     <view class="submitform">
-      <button id="button">登录</button>
+      <button id="button" bindtap='signIn'>登录</button>
     </view>
   </view>
 </view>
