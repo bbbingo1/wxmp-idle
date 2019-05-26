@@ -9,14 +9,15 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": false,
+		"nodeModules": true,
 		"autoAudits": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
-	"appid": "wx6f4a993ab36dbc05",
-	"projectname": "%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%B5%9B",
+	"appid": "wx79915908529d16ad",
+	"projectname": "%E9%97%B2%E7%BD%AE%E5%B9%B3%E5%8F%B0",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

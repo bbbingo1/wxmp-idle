@@ -3,15 +3,15 @@
     "pages/my/my",
     "pages/index/index",
     "pages/add/add",
-    "pages/logs/logs",
     "pages/goods-detail/index",
+    "pages/logs/logs",
     "pages/slider/index",
+    "pages/login/index",
     "pages/add-detail/index",
     "pages/order-list/index",
     "pages/login/index",
     "pages/home-page/home-page",
     "pages/Search/Search",
-    "pages/good-detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

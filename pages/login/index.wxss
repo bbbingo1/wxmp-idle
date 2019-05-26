@@ -1,1 +1,58 @@
 /* pages/login/index.wxss */
+page{
+  background: rgb(243, 243, 243);
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100rpx auto;
+}
+.login-logo image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.inputform{
+  margin: 40rpx;
+  width: 480rpx;
+}
+.account,.password{
+  margin: 20rpx 0;
+  width: 100%;
+}
+#number,#secret{
+  background: white;
+  padding: 10rpx 15rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 32rpx; 
+  height:75rpx;
+  width: 100%
+}
+.boxer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+}
+#bear checkbox{
+  border-radius: 50%; 
+}/
+.user-agreement{
+  color: rgb(46, 219, 112);
+  text-decoration: underline;
+}
+.submitform{
+  width: 480rpx;
+}
+#button{
+  background: white;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  border-radius: 8rpx;
+  font-size: 32rpx; 
+  width: 100%;
+  background: rgb(46, 219, 112);
+  color: #fff;
+}

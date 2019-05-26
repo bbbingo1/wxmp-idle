@@ -49,62 +49,88 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // 商品详情
+    detail: {
+      imgs: ['/images/swiper1.jpg', '/images/swiper2.jpg', '/images/swiper3.jpg'],
+      title: "润＋+豪华汽车2013款 1.8TSI豪华型-个人二手+海贼王珍藏版手办",
+      price: "11004",
+      goods_type: "二手车",
+      describe: "大三男车主，上下课代步用车，1.8t豪华型，车速最高可达*km/h，8成新，发动机变速箱良好"
+    },
+    // 卖家信息
+    seller:{
+      avatar:'/images/avatar.png',
+      name:'彭于晏',
+      descripe:"大三计算机网络工程4班"
+    },
+    //我想要它or移除收藏
+    if_want:{
+      text:"我想要它",//or "移除收藏"
+      style:"beforewant"//or "wanted"
+    },
+    indicatorDots: true, //指示点
+    vertical: false, //横向
+    autoplay: true, //自动播放
+    circular: true, //衔接滑动
+    interval: 3000, //自动播放间隔时间
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
