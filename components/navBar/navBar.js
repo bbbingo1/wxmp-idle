@@ -1,6 +1,6 @@
 Page({
 	properties: {
-		dataList:{
+		dataprop:{
 			type:Object
 		}
 	},
@@ -133,16 +133,25 @@ Page({
 		    /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-			this.loadList();
+    ready: function (options) {
+			console.log(this.data.dataprop);
+			this.setData({
+				dataList: this.data.dataprop
+			})
 	},
     tabSelect(e) {
+			console.log(this.properties);
+			this.setData({
+				dataList: this.properties.dataprop
+			})
+			console.log(this.data.dataList);
 			console.log(e);
-
       this.setData({
         TabCur: e.currentTarget.dataset.id,
-        scrollLeft: (e.currentTarget.dataset.id-1)*60
-      })
+				scrollLeft: (e.currentTarget.dataset.id-1)*60,
+				dataSet: this.data.dataList[this.data.navList[e.currentTarget.dataset.id]]
+			})
+			
 		},
 tapCard: function (event) {
 	const cardId =  event.detail.card_id

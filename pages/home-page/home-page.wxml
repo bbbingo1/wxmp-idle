@@ -17,7 +17,7 @@
 <Advertisement></Advertisement>
 <!--广告结束-->
 <!--导航条开始-->
-<navBar dataList="dataList"></navBar>
+<navBar dataprop='{{dataList}}' />
 <!--导航条结束-->
 <!--瀑布流插件开始-->
 
