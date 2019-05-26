@@ -89,7 +89,7 @@ loadList: function(type,page){   //加载首页瀑布流数据
                             id: '1',
                             content:
                                 '',
-                            backgroundColor: '#34d058',
+                            backgroundColor: '#fff',
                             time: 1533106010,
                             likedCount: 0,
                             liked: false,
@@ -102,17 +102,19 @@ loadList: function(type,page){   //加载首页瀑布流数据
                                  
                              ]
                         };
-                        console.log( res.data.goods[i]);
                         item.id = i + 1;
-                        item.content = res.data.goods[i].name;
-/*                         item.user.username = res.data.goods[i].poster.name; */
+                        item.content = res.data.goods[i].describe;
+/*                          item.user.username = res.data.goods[i].poster.name;  */
                         item.images.push(res.data.goods[i].main_img);
-                        item.likedCount = res.data.goods[i].prices;
-                        console.log(that.data.dataList);
-                    that.data.dataList[that.data.navList[type-1].Egname].push(item);
-                    console.log(that.data.dataList);
+                        item.likedCount = res.data.goods[i].price;
+                    that.data.dataList[that.data.navList[type + 1].Egname].push(item);
                 }
+                console.log(that.data.dataList);
+                that.setData({  //必须要这样设置一下dataList的变化才会传到子组去
+                    dataList:that.data.dataList
+                  })
             }
+            
     });
 },
     /**
@@ -135,7 +137,6 @@ loadList: function(type,page){   //加载首页瀑布流数据
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        console.log(this.data.dataList);
     },
   
     /**
