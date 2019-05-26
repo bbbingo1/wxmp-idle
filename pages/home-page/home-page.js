@@ -95,12 +95,12 @@ loadList: function(type,page){   //加载首页瀑布流数据
                             likedCount: 0,
                             liked: false,
                             user: {
-                                avatar: '',
-                                username: '',
+                                avatar: "../../images/pig.jpg",
+                                username: '杨超越',
                                 userId: '1'
                             },
                             images: [
-                                 
+                                 "../../images/pig.jpg"
                              ]
                         };
                         item.id = i + 1;

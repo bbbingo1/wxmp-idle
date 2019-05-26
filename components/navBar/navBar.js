@@ -166,13 +166,15 @@ Component({
 				dataSet: this.data.dataList[this.data.navList[e.currentTarget.dataset.id].Egname]
 			})
 		},
+		tapCard: function (event) {
+			const cardId =  event.detail.card_id
+			console.log(event);
+			// code here.
+			var that =  this;
+			console.log(that.data.dataSet)
+			wx.navigateTo({
+				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[event.detail.card_id - 1].id
+			  });
+		},   
 	},
-
-tapCard: function (event) {
-	const cardId =  event.detail.card_id
-	// code here.
-	var that =  this;
-	
-	
-},   
   })

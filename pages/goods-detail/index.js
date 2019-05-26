@@ -42,8 +42,31 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onShow: function (options) {
+    var that = this;
+    var goods_id = options.goods_id;
+    wx.request({    //发送请求
+      url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
+      type:'get',
+      data: {
+        goods_id: goods_id
+      },
+      header: {
+          'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data);
+        that.data.detail.imgs = res.data.goods.imgs;
+        that.data.detail.describe = res.data.goods.describe;
+        that.data.detail.title = res.data.goods.name;
+        switch(res.data.goods.type){
+          case 1:that.data.detail.goods_type = "食品";break;
+          case 2:that.data.detail.goods_type = "数码产品";break;
+        }
+        that.data.detail.price = res.data.goods.prices;
+        that.data.detail.name = res.data.poster.name;
+      }
+    });
   },
   /**
    * 页面的初始数据
