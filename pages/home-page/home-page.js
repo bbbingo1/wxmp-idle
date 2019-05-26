@@ -133,8 +133,7 @@ Page({
             type:'get',
             data: {
               page: 0,
-              type: '食品',
-              keyword: '食品',
+              type: 1,
             },
             header: {
               'content-type': 'application/json' // 默认值
@@ -149,8 +148,7 @@ Page({
             type:'get',
             data: {
               page: 0,
-              type: '服饰',
-              keyword: '服饰',
+              type: 1,
             },
             header: {
               'content-type': 'application/json' // 默认值
@@ -166,8 +164,7 @@ Page({
             type:'get',
             data: {
               page: 0,
-              type: '数码产品',
-              keyword: '数码产品',
+              type: 2,
             },
             header: {
               'content-type': 'application/json' // 默认值
