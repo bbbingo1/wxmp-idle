@@ -50,7 +50,7 @@
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "brickLayout": {
-      "version": "0.1.1",
+      "version": "0.2.0",
       "provider": "wx3c042630f3cdc175"
     }
 }

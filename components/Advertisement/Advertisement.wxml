@@ -6,6 +6,77 @@
   </view>
   <view class="bg-white padding">
     <view class="grid col-3 grid-square">
-      <view class="bg-img" wx:for="{{6}}" wx:key style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);"></view>
+    <!--小卡片开始-->
+     <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../images/home-list-pic1.jpeg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      手机
+    </view>
+    <view class="padding-xs">
+     精致 优秀.
+    </view>
+  </view>
+</view>
+<!--小卡片结束-->
+    <!--小卡片开始-->
+     <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../images/home-list-pic1.jpeg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      手机
+    </view>
+    <view class="padding-xs">
+     精致 优秀.
+    </view>
+  </view>
+</view>
+<!--小卡片结束-->
+    <!--小卡片开始-->
+     <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../images/home-list-pic2.jpg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      手机
+    </view>
+    <view class="padding-xs">
+     精致 优秀.
+    </view>
+  </view>
+</view>
+<!--小卡片结束-->
+    <!--小卡片开始-->
+     <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../images/home-list-pic1.jpeg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      手机
+    </view>
+    <view class="padding-xs">
+     精致 优秀.
+    </view>
+  </view>
+</view>
+<!--小卡片结束-->
+    <!--小卡片开始-->
+     <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../images/home-list-pic1.jpeg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      手机
+    </view>
+    <view class="padding-xs">
+     精致 优秀.
+    </view>
+  </view>
+</view>
+<!--小卡片结束-->
+    <!--小卡片开始-->
+     <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../images/home-list-pic2.jpg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      手机
+    </view>
+    <view class="padding-xs">
+      精致 优秀.
+    </view>
+  </view>
+</view>
+<!--小卡片结束-->
     </view>
   </view>
