@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    number: 3117005167,
-    password: null,
+    number: 3117001538,
+    password: 246973,
     checked: false
   },
   //表单更改
@@ -40,7 +40,6 @@ Page({
   },
   //登录
   signIn() {
-    console.log("登录")
     if (this.data.number && this.data.password && this.data.checked) {
       let result = login(this.data.number, this.data.password)
       console.log(result)
