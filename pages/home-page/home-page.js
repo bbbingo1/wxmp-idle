@@ -100,13 +100,13 @@ loadList: function(type,page){   //加载首页瀑布流数据
                                 userId: '1'
                             },
                             images: [
-                                 "../../images/pig.jpg"
+                                 "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg","https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg"
                              ]
                         };
                         item.id = i + 1;
                         item.content = res.data.goods[i].describe;
 /*                          item.user.username = res.data.goods[i].poster.name;  */
-                        item.images.push(res.data.goods[i].main_img);
+/*                         item.images.push(res.data.goods[i].main_img); */
                         item.likedCount = res.data.goods[i].price;
                     that.data.dataList[that.data.navList[type + 1].Egname].push(item);
                 }
