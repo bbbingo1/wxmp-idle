@@ -10,7 +10,8 @@
     "pages/add-detail/index",
     "pages/order-list/index",
     "pages/login/index",
-    "pages/Search/Search"
+    "pages/Search/Search",
+    "components/chat/chat"
   ],
   "window": {
     "backgroundTextStyle": "light",

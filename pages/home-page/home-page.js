@@ -105,7 +105,7 @@ loadList: function(type,page){   //加载首页瀑布流数据
                         };
                         item.id = i + 1;
                         item.content = res.data.goods[i].describe;
-/*                          item.user.username = res.data.goods[i].poster.name;  */
+                         item.user.username = res.data.goods[i].name; 
                         item.images = [];
                         Object.keys( res.data.goods[i].picture).forEach(function(key){
                             item.images.push("https://liyan6987.cn/static/" + res.data.goods[i].picture[key]);

@@ -53,7 +53,7 @@
     <view class='submit-wish {{if_want.style}}'>
       {{if_want.text}}
     </view>
-    <view class='submit-contact'>
+    <view class='submit-contact' bindtap="tapChat">
       联系卖家
     </view>
   </view>
