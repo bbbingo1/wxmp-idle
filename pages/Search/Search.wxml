@@ -1,3 +1,3 @@
+<import src="/wxSearch/wxSearch"></import>
+<template is="wxSearch" data="{{...tabData}}"></template>
 
-
-1	

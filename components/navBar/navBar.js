@@ -1,43 +1,66 @@
-Page({
+Component({
 	properties: {
-		dataList:{
-			type:Object
+		dataprop:{
+			type:Object,
+			observer: function(newVal, oldVal, changedPath) {
+        // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
+				// 通常 newVal 就是新设置的数据， oldVal 是旧数据
+				this.setData({
+					dataList: this.properties.dataprop,
+					dataSet: this.data.dataList['nearby'] //初始化页面的列表
+				})
+     }
 		}
 	},
     data: {
       TabCur: 0,
 			scrollLeft:0,
 			navList:[{
-				name:"附近",
-			},{
-					name:"推荐",
-			},{
-				name:"食品",
-			},{
-				name:"数码用品",
-			},{
-				name:"服饰",
-			},{
-				name:"手机",
-			},{
-				name:"图书",
-			},{
-				name:"二手车",
-			},{
-				name:"平板电脑",
-			},{
-				name:"游戏交易",
-			},{
-				name:"家用电器",
-			},{
-				name:"玩具娱乐",
-			},{
-				name:"运动户外",
-			},{
-				name:"票务卡券",
-			},{
-				name:"电脑",
-			}],
+        name:"附近",
+        Egname:"nearby"
+    },{
+        name:"推荐",
+        Egname:"Recommend"
+    },{
+        name:"食品",
+        Egname:"food"
+    },{
+        name:"数码用品",
+        Egname:"Electronics"
+    },{
+        name:"服饰",
+        Egname:"Clothes"
+    },{
+        name:"手机",
+        Egname:"mobiles"
+    },{
+        name:"图书",
+        Egname:"book"
+    },{
+        name:"二手车",
+        Egname:"car"
+    },{
+        name:"平板电脑",
+        Egname:"TabletPC"
+    },{
+        name:"游戏交易",
+        Egname:"Game"
+    },{
+        name:"家用电器",
+        Egname:"HouseholdElectricAppliances"
+    },{
+        name:"玩具娱乐",
+        Egname:"Toys"
+    },{
+        name:"运动户外",
+        Egname:"Outdoorsport"
+    },{
+        name:"票务卡券",
+        Egname:"Ticketing"
+    },{
+        name:"电脑",
+        Egname:""
+    }],
 			brick_option:{
 				backgroundColor:'#000',
 				fontColor:'#333',
@@ -133,20 +156,25 @@ Page({
 		    /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-			this.loadList();
+    ready: function (options) {
 	},
-    tabSelect(e) {
-			console.log(e);
-
+	methods:{
+		tabSelect(e) {
       this.setData({
         TabCur: e.currentTarget.dataset.id,
-        scrollLeft: (e.currentTarget.dataset.id-1)*60
-      })
+				scrollLeft: (e.currentTarget.dataset.id-1)*60,
+				dataSet: this.data.dataList[this.data.navList[e.currentTarget.dataset.id].Egname]
+			})
 		},
-tapCard: function (event) {
-	const cardId =  event.detail.card_id
-	// code here.
-	console.log(event);
-},   
+		tapCard: function (event) {
+			const cardId =  event.detail.card_id
+			console.log(event);
+			// code here.
+			var that =  this;
+			console.log(that.data.dataSet)
+			wx.navigateTo({
+				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[event.detail.card_id - 1].id
+			  });
+		},   
+	},
   })
