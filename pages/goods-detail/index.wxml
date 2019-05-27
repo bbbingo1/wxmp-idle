@@ -1,4 +1,4 @@
-<!--pages/goods-detail/index.wxml-->
+<!-- pages/goods-detail/index.wxml -->
 <view class='container'>
   <view class='block1'>
     <!-- 轮播图 -->
@@ -12,7 +12,11 @@
     </swiper>
     <!-- 价格+标题 -->
     <view class='block-inner-containner'>
-      <view class='item-price'>￥<view class='price'>{{detail.price}}</view>元</view>
+      <view class='item-price'>
+        ￥
+        <view class='price'>{{detail.price}}</view>
+        元
+      </view>
       <view class='item-title'>{{detail.title}}</view>
     </view>
   </view>
@@ -53,8 +57,6 @@
     <view class='submit-wish {{if_want.style}}' bindtap="tapTarget" data-target="{{relation_id}}">
       {{if_want.text}}
     </view>
-    <view class='submit-contact' bindtap="tapChat">
-      联系卖家
-    </view>
+    <view class='submit-contact' bindtap="tapChat">联系卖家</view>
   </view>
 </view>

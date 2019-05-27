@@ -4,7 +4,8 @@ function checkLogin() {
     url: 'https://liyan6987.cn/auth/login', // 仅为示例，并非真实的接口地址
     method: 'post',
     header: {
-      'content-type': 'application/x-www-form-urlencoded' // 默认值
+      'content-type': 'application/x-www-form-urlencoded', // 默认值
+      'cookie': wx.getStorageSync("sessionid")//读取cookie
     },
     success(res) {
       console.log(res)
@@ -19,7 +20,7 @@ function checkLogin() {
 
 //登录接口
 function login(account, password) {
-  var result =1;
+  var result = 1;
   wx.login({
     success: res => {
       var code = res.code;
@@ -33,7 +34,8 @@ function login(account, password) {
         },
         method: 'post',
         header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
+          'content-type': 'application/x-www-form-urlencoded', // 默认值
+          'cookie':wx.getStorageSync("sessionid")//读取cookie
         },
         success(res) {
           console.log(res)

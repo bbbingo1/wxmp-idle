@@ -87,7 +87,8 @@ Page({
         type: type,
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json', // 默认值
+        'cookie':wx.getStorageSync("sessionid")//读取cookie
       },
       success(res) {
         console.log(res.data);

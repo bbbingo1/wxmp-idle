@@ -14,12 +14,16 @@ App({
         var code = res.code;
         that.globalData.js_code = code;
         wx.setStorageSync('js_code', code)
+        //登录请求回来之后,读取res的header的cookie
+        //这里的sessionid随便写的,就是个唯一标识
+        wx.setStorageSync("sessionid", res.header["Set-Cookie"])
         wx.request({
           url: 'https://liyan6987.cn/auth/code_to_info',
           data: { code:code},
           method:'post',
           header: {
-            'content-type': 'application/x-www-form-urlencoded' // 默认值
+            'content-type': 'application/x-www-form-urlencoded', // 默认值
+            'cookie':wx.getStorageSync("sessionid")//读取cookie
           },
           success(res) {
             // console.log(res)
