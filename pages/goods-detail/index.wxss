@@ -29,7 +29,8 @@
 }
 
 /* 提交按钮 */
-.submit-wish{
+
+.submit-wish {
   box-sizing: border-box;
   width: 45%;
   padding: 20rpx;
@@ -41,12 +42,19 @@
   border-top-left-radius: 20rpx;
   border-bottom-left-radius: 20rpx;
 }
-.beforewant{
-  background: rgb(74, 235, 154)
+
+.beforewant {
+  background: rgb(74, 235, 154);
 }
-.wanted{
+
+.wanted {
   background: rgb(255, 158, 102);
 }
+
+.editItem {
+  background: rgb(102, 117, 255);
+}
+
 .submit-contact {
   box-sizing: border-box;
   width: 45%;
@@ -59,7 +67,7 @@
   font-size: 34rpx;
   border-top-right-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
-  }
+}
 
 /* 轮播测试样式 */
 
@@ -229,13 +237,13 @@
 
 .contact {
   box-sizing: border-box;
-  padding:10rpx 20rpx;
-  margin: 10rpx;  
+  padding: 10rpx 20rpx;
+  margin: 10rpx;
   position: absolute;
   right: 0;
   text-align: center;
   background: #f66;
-  color: #fff!important;
+  color: #fff !important;
   font-size: 34rpx;
   border-radius: 12rpx;
 }

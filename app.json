@@ -16,7 +16,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0BDDB8",
     "backgroundColor": "#0BDDB8",
-    "navigationBarTitleText": "基于校内的闲置平台",
+    "navigationBarTitleText": "GDUT闲置平台",
     "navigationBarTextStyle": "white",
     "onReachBottomDistance": 50
   },
