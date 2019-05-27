@@ -12,7 +12,8 @@ Component({
       sliderLeft: 0,
       searchIsHidden: true,
       searchAllShow: false,
-      inputVal: ''
+      inputVal: '',
+      inputVal2:''
     }
   },
     onLoad: function (options) {
@@ -39,23 +40,9 @@ Component({
         bindGoSearch:function(e){
           var that = this
           WxSearch.bindGoSearch(e,that);
-          wx.request({    //发送请求
-            url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
-            type: 'get',
-            data: {
-              keyword: that.data.tabData.inputVal,
-              page: 0,
-            },
-            header: {
-              'content-type': 'application/json', // 默认值
-              'cookie':wx.getStorageSync("sessionid")//读取cookie
-            },
-            success(res) {
-              console.log(res.data);
-              wx.navigateTo({
-                url: "/pages/order-list/index"
-              });
-            }
+          console.log(that.data.tabData.inputVal);
+          wx.navigateTo({
+            url:"/pages/goods-list/goods-list?type=" + that.data.tabData.searchList[0]
           });
         },
         bindDelLog: function(e){

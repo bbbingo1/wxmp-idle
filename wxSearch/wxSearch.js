@@ -28,6 +28,7 @@ module.exports={
     let searchList_stroage = getStorage('searchList') || [];
     const inputVal = that.data.tabData.inputVal;
     searchList_stroage.push(inputVal)
+    that.data.tabData.inputVal2 = inputVal;
     setStorage('searchList', searchList_stroage)
     this._setData(that, {
       inputVal: ''
