@@ -95,39 +95,40 @@ Page({
         if(res.data.message == "params error"){
           return;
         }
-        for (let i = 0; i < res.data.goods.length; i++) {
-          let item = {
-            id: '1',
-            content:
-              '',
-            backgroundColor: '#fff',
-            time: 1533106010,
-            likedCount: 0,
-            liked: false,
-            user: {
-              avatar: "../../images/pig.jpg",
-              username: '杨超越',
-              userId: '1'
-            },
-            images: [
-              "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg"
-            ]
-          };
-          item.id = i + 1;
-          item.content = res.data.goods[i].describe;
-          item.user.username = res.data.goods[i].name;
-          item.images = [];
-          Object.keys(res.data.goods[i].picture).forEach(function (key) {
-            item.images.push("https://liyan6987.cn/static/" + res.data.goods[i].picture[key]);
+        if(res.data.total != 0){
+          for (let i = 0; i < res.data.goods.length; i++) {
+            let item = {
+              id: '1',
+              content:
+                '',
+              backgroundColor: '#fff',
+              time: 1533106010,
+              likedCount: 0,
+              liked: false,
+              user: {
+                avatar: "../../images/pig.jpg",
+                username: '杨超越',
+                userId: '1'
+              },
+              images: [
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg"
+              ]
+            };
+            item.id = i + 1;
+            item.content = res.data.goods[i].describe;
+            item.user.username = res.data.goods[i].name;
+            item.images = [];
+            Object.keys(res.data.goods[i].picture).forEach(function (key) {
+              item.images.push("https://liyan6987.cn/static/" + res.data.goods[i].picture[key]);
+            })
+            item.likedCount = res.data.goods[i].price;
+            that.data.dataList[that.data.navList[type + 1].Egname].push(item);
+          }
+          that.setData({  //必须要这样设置一下dataList的变化才会传到子组去
+            dataList: that.data.dataList
           })
-          item.likedCount = res.data.goods[i].price;
-          that.data.dataList[that.data.navList[type + 1].Egname].push(item);
         }
-        that.setData({  //必须要这样设置一下dataList的变化才会传到子组去
-          dataList: that.data.dataList
-        })
       }
-
     });
   },
   /**
