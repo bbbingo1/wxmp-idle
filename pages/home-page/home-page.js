@@ -99,7 +99,6 @@ Page({
     this.addList(dataList2[0], 2);
     this.addList(dataList2[2], 3);
     this.addList(dataList2[1], 4);
-
   },
   /**
    * 生命周期函数--监听页面加载
