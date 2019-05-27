@@ -13,47 +13,47 @@ Page({
       [ //假数据
         {
           id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
+          img: "/images/test1.jpg",
+          name: "皮卡皮卡",
+          tag: "数码耳机",
+          cherish: 34,
+          watch: 1223
+        },
+        {
+          id: '',
+          img: "/images/test2.jpg",
+          name: "百草味-零食大礼包 休闲食品网红小吃坚果一整箱宿舍散装办公室女",
+          tag: "休闲食品",
+          cherish: 2,
+          watch: 43
+        },
+        {
+          id: '',
+          img: "/images/test3.jpg",
+          name: "【买一送一】武汉精武麻辣鸭脖变态辣鸭脖子小包装卤味零食小吃",
+          tag: "零食小吃",
+          cherish: 5,
+          watch: 23
+        },
+        {
+          id: '',
+          img: "/images/test4.jpg",
+          name: "姜创钢琴即兴伴奏视频教程钢琴教学教程钢琴教程零基础即兴伴奏",
+          tag: "姜创钢琴正品",
+          cherish: 12,
+          watch: 43
+        },
+        {
+          id: '',
+          img: "/images/home-list-pic3.jpg",
+          name: "排箫 乐器专业演奏级排箫16管紫竹排箫22管G调C调送横笛 排箫资料",
+          tag: "风海名家",
           cherish: 404,
           watch: 1314
         },
         {
           id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-        {
-          id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-        {
-          id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-        {
-          id: '',
-          img: "/images/idea.png",
-          name: "润＋+耳机3元一条便宜10元4条大甩卖",
-          tag: "知名情感博主",
-          cherish: 404,
-          watch: 1314
-        },
-        {
-          id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper3.jpg",
           name: "润＋+耳机3元一条便宜10元4条大甩卖",
           tag: "知名情感博主",
           cherish: 404,
@@ -65,7 +65,7 @@ Page({
       [ //假数据
         {
           id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper1.jpg",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
           cherish: 404,
@@ -73,7 +73,7 @@ Page({
         },
         {
           id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper2.jpg",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
           cherish: 404,
@@ -81,7 +81,7 @@ Page({
         },
         {
           id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper2.jpg",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
           cherish: 404,
@@ -89,7 +89,7 @@ Page({
         },
         {
           id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper2.jpg",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
           cherish: 404,
@@ -97,7 +97,7 @@ Page({
         },
         {
           id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper2.jpg",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
           cherish: 404,
@@ -105,7 +105,7 @@ Page({
         },
         {
           id: '',
-          img: "/images/idea.png",
+          img: "/images/swiper2.jpg",
           name: "梨研最新最潮ipad带pencilcare保护套全套一条龙服务只要998",
           tag: "知名情感博主",
           cherish: 404,

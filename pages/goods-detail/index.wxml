@@ -50,7 +50,7 @@
     </view>
   </view>
   <view class='submit-container'>
-    <view class='submit-wish {{if_want.style}}'>
+    <view class='submit-wish {{if_want.style}}' bindtap="tapTarget" data-target="{{relation_id}}">
       {{if_want.text}}
     </view>
     <view class='submit-contact' bindtap="tapChat">

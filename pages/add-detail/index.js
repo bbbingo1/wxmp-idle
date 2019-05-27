@@ -24,12 +24,14 @@ Page({
     descripe: '',
     price: '',
     type_index: 8,
-    picker: ['数码产品', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '校内服务', '其他'],
+    picker: ['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他'],
+    loadModal: false,
+    load_text:"正在上传信息"
   },
   //表单更改
   adInputChange: function(e) {
     let that = this;
-    console.log(e)
+    // console.log(e)
     if (e.currentTarget.dataset.obj === "title") {
       that.setData({
         title: e.detail.value,
@@ -40,13 +42,13 @@ Page({
       })
     } else if (e.currentTarget.dataset.obj === "descripe") {
       that.setData({
-        price: e.detail.value,
+        descripe: e.detail.value,
       })
     }
   },
   //类型选择
   PickerChange(e) {
-    console.log(e);
+    // console.log(e);
     this.setData({
       type_index: e.detail.value
     })
@@ -64,7 +66,7 @@ Page({
         that.setData({
           imgList: that.data.imgs
         })
-        console.log(that.data.imgList)
+        // console.log(that.data.imgList)
       },
     })
   },
@@ -95,10 +97,51 @@ Page({
     })
   },
 
+  //发布提交
   submitForm() {
-    // let 
-  },
+    let that = this;
+    // let formData = new FormData();
+    // let imgs = that.data.imgList.map(function (key) {
+    //   key.img
+    // });
+    // formData.append("file", imgs);
+    // formData.append("goods_name", that.data.title);
+    // formData.append("prices", that.data.price);
+    // formData.append("describe", that.data.descripe);
+    // formData.append("goods_type", that.data.type_index);
+    // wx.request({
+    //   url: 'https://liyan6987.cn/auth/login',
+    //   data: formData,
+    //   method: 'post',
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //   success(res) {
+    //     wx.showToast({
+    //       title: '发布成功',
+    //       icon: 'success',
+    //       duration: 2000,
+    //       success:function(){
 
+    //       }
+    //     })
+    //   }
+    // })
+    wx.showToast({
+      title: '发布成功',
+      icon: 'success',
+      duration: 2000
+    })
+  },
+  //显示加载
+  loadModal() {
+    this.setData({
+      loadModal: true
+    })
+    setTimeout(() => {
+      this.setData({
+        loadModal: false
+      })
+    }, 2000)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

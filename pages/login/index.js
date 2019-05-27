@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    number: 3117001538,
-    password: 246973,
+    number: null,
+    password: null,
     checked: false
   },
   //表单更改
