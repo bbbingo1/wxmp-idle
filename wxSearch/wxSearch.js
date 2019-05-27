@@ -24,6 +24,7 @@ module.exports={
     })
   },
   bindGoSearch(e,that){
+    console.log(e,that);
     let searchList_stroage = getStorage('searchList') || [];
     const inputVal = that.data.tabData.inputVal;
     searchList_stroage.push(inputVal)

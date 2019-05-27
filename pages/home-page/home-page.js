@@ -12,15 +12,17 @@ Page({
       Electronics: [],
       Clothes: [],
       mobiles: [],
-      book: [],
+      Book: [],
       car: [],
       TabletPC: [],
       Game: [],
       HouseholdElectricAppliances: [],
-      Toys: [],
+      Toymusicalinstrument: [],
       Outdoorsport: [],
       Ticketing: [],
-      Computer: []
+      Computer: [],
+      DailyUse:[],
+      OfficeEquipment:[],
     },
     navList: [{
       name: "附近",
@@ -32,18 +34,27 @@ Page({
       name: "食品",
       Egname: "food"
     }, {
-      name: "数码用品",
-      Egname: "Electronics"
-    }, {
       name: "服饰",
       Egname: "Clothes"
-    }, {
+    },{
+      name: "图书",
+      Egname: "Book"
+    },{
+      name: "生活用品",
+      Egname: "DailyUse"
+    },{
+      name: "办公用具",
+      Egname: "OfficeEquipment"
+    },{
+      name: "玩具乐器",
+      Egname: "Toymusicalinstrument"
+    },{
+      name: "数码用品",
+      Egname: "Electronics"
+    },{
       name: "手机",
       Egname: "mobiles"
-    }, {
-      name: "图书",
-      Egname: "book"
-    }, {
+    },  {
       name: "二手车",
       Egname: "car"
     }, {
@@ -55,9 +66,6 @@ Page({
     }, {
       name: "家用电器",
       Egname: "HouseholdElectricAppliances"
-    }, {
-      name: "玩具娱乐",
-      Egname: "Toys"
     }, {
       name: "运动户外",
       Egname: "Outdoorsport"
@@ -71,7 +79,6 @@ Page({
   },
   loadList: function (type, page) {   //加载首页瀑布流数据
     var that = this;
-    var dataList2 = [];
     wx.request({    //发送请求
       url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
       type: 'get',
@@ -84,7 +91,9 @@ Page({
       },
       success(res) {
         console.log(res.data);
-        dataList2.push(res.data);
+        if(res.data.message == "params error"){
+          return;
+        }
         for (let i = 0; i < res.data.goods.length; i++) {
           let item = {
             id: '1',
@@ -127,6 +136,11 @@ Page({
     this.loadList(1, 1);
     this.loadList(2, 1);
     this.loadList(3, 1);
+    this.loadList(4, 1);
+    this.loadList(5, 1);
+    this.loadList(6, 1);
+    this.loadList(7, 1);
+    this.loadList(8, 1);
   },
 
   /**

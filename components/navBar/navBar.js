@@ -15,52 +15,58 @@ Component({
     data: {
       TabCur: 0,
 			scrollLeft:0,
-			navList:[{
-        name:"附近",
-        Egname:"nearby"
-    },{
-        name:"推荐",
-        Egname:"Recommend"
-    },{
-        name:"食品",
-        Egname:"food"
-    },{
-        name:"数码用品",
-        Egname:"Electronics"
-    },{
-        name:"服饰",
-        Egname:"Clothes"
-    },{
-        name:"手机",
-        Egname:"mobiles"
-    },{
-        name:"图书",
-        Egname:"book"
-    },{
-        name:"二手车",
-        Egname:"car"
-    },{
-        name:"平板电脑",
-        Egname:"TabletPC"
-    },{
-        name:"游戏交易",
-        Egname:"Game"
-    },{
-        name:"家用电器",
-        Egname:"HouseholdElectricAppliances"
-    },{
-        name:"玩具娱乐",
-        Egname:"Toys"
-    },{
-        name:"运动户外",
-        Egname:"Outdoorsport"
-    },{
-        name:"票务卡券",
-        Egname:"Ticketing"
-    },{
-        name:"电脑",
-        Egname:""
-    }],
+			navList: [{
+				name: "附近",
+				Egname: "nearby"
+			  }, {
+				name: "推荐",
+				Egname: "Recommend"
+			  }, {
+				name: "食品",
+				Egname: "food"
+			  }, {
+				name: "服饰",
+				Egname: "Clothes"
+			  },{
+				name: "图书",
+				Egname: "Book"
+			  },{
+				name: "生活用品",
+				Egname: "DailyUse"
+			  },{
+				name: "办公用具",
+				Egname: "OfficeEquipment"
+			  },{
+				name: "玩具乐器",
+				Egname: "Toymusicalinstrument"
+			  },{
+				name: "数码用品",
+				Egname: "Electronics"
+			  },{
+				name: "手机",
+				Egname: "mobiles"
+			  },  {
+				name: "二手车",
+				Egname: "car"
+			  }, {
+				name: "平板电脑",
+				Egname: "TabletPC"
+			  }, {
+				name: "游戏交易",
+				Egname: "Game"
+			  }, {
+				name: "家用电器",
+				Egname: "HouseholdElectricAppliances"
+			  }, {
+				name: "运动户外",
+				Egname: "Outdoorsport"
+			  }, {
+				name: "票务卡券",
+				Egname: "Ticketing"
+			  }, {
+				name: "电脑",
+				Egname: ""
+			  }],
 			brick_option:{
 				backgroundColor:'#000',
 				fontColor:'#333',
@@ -69,23 +75,25 @@ Component({
 						default:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558849679034&di=55382fff9d2259fd206e6250f34407d2&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F04%2F14%2F39f94def7f06c8d438deff42a846ce27.jpg',
 				}
 		},
-		dataList:{
-				nearby:[],
-				Recommend:[],
-				food:[],
-				Electronics:[],
-				Clothes:[],
-				mobiles:[],
-				book:[],
-				car:[],
-				TabletPC:[],
-				Game:[],
-				HouseholdElectricAppliances:[],
-				Toys:[],
-				Outdoorsport:[],
-				Ticketing:[],
-				Computer:[]
-		},  
+		dataList: {
+			nearby: [],
+			Recommend: [],
+			food: [],
+			Electronics: [],
+			Clothes: [],
+			mobiles: [],
+			Book: [],
+			car: [],
+			TabletPC: [],
+			Game: [],
+			HouseholdElectricAppliances: [],
+			Toymusicalinstrument: [],
+			Outdoorsport: [],
+			Ticketing: [],
+			Computer: [],
+			DailyUse:[],
+			OfficeEquipment:[],
+		  },
 		dataSet:[
 				{
 						id: '1',

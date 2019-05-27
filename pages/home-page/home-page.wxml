@@ -14,10 +14,10 @@
 <List class="margin-top"></List>
 <!--宫格列标结束-->
 <!--广告开始-->
-<Advertisement></Advertisement>
+<!-- <Advertisement></Advertisement> -->
 <!--广告结束-->
 <!--导航条开始-->
-<navBar dataprop='{{dataList}}' />
+<navBar dataprop='{{dataList}}' class="margin-top"/>
 <!--导航条结束-->
 <!--瀑布流插件开始-->
 <brickLayout
