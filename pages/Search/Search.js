@@ -5,9 +5,9 @@ var app = require("../../wxSearch/wxSearch.js");
 Component({
   data: {
     tabData: {
-      searchList: getStorage('searchList'),
+      searchList: [],
       tabs: ['院校优先', '专业优先', '更多筛选'],
-      hotsSearch: ['数学与应用数学', '信息与计算科学', '网络工程', '应用化学', '应用化学', '计算机科学与技术', '数学与应用数学', '信息与计算科学', '网络工程'], activeIndex: 0,
+      hotsSearch: ['苹果手机', '小米手机', '网红饭团', '润佳', '公主狗', '腊肠狗', '二手单车', '出租男友', '出租女友'], activeIndex: 0,
       sliderOffset: 0,
       sliderLeft: 0,
       searchIsHidden: true,
@@ -22,7 +22,7 @@ Component({
       methods:{
         bindShowLog: function(e){
           var that = this
-          WxSearch.bindShowLog(that);
+          WxSearch.bindShowLog(e,that);
         },
         bindHideLog: function(e){
           var that = this
@@ -39,6 +39,24 @@ Component({
         bindGoSearch:function(e){
           var that = this
           WxSearch.bindGoSearch(e,that);
+          wx.request({    //发送请求
+            url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
+            type: 'get',
+            data: {
+              keyword: that.data.tabData.inputVal,
+              page: 0,
+            },
+            header: {
+              'content-type': 'application/json', // 默认值
+              'cookie':wx.getStorageSync("sessionid")//读取cookie
+            },
+            success(res) {
+              console.log(res.data);
+              wx.navigateTo({
+                url: "/pages/order-list/index"
+              });
+            }
+          });
         },
         bindDelLog: function(e){
           var that = this

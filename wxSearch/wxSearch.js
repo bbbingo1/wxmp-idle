@@ -28,7 +28,6 @@ module.exports={
     let searchList_stroage = getStorage('searchList') || [];
     const inputVal = that.data.tabData.inputVal;
     searchList_stroage.push(inputVal)
-
     setStorage('searchList', searchList_stroage)
     this._setData(that, {
       inputVal: ''
@@ -81,6 +80,7 @@ module.exports={
     })
   },
   _setData(that, param){
+    console.log(that);
     let tabData = that.data.tabData;
     for (var key in param){
       tabData[key] = param[key];
