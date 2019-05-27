@@ -40,9 +40,9 @@ Component({
         bindGoSearch:function(e){
           var that = this
           WxSearch.bindGoSearch(e,that);
-          console.log(that.data.tabData.inputVal);
+          console.log(that.data.tabData.inputVal2);
           wx.navigateTo({
-            url:"/pages/goods-list/goods-list?type=" + that.data.tabData.searchList[0]
+            url:"/pages/goods-list/goods-list?type=" + that.data.tabData.inputVal2
           });
         },
         bindDelLog: function(e){
