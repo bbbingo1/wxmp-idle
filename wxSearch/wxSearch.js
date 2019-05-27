@@ -33,7 +33,7 @@ module.exports={
     this._setData(that, {
       inputVal: ''
     })
-    this.goSchool(inputVal)
+/*     this.goSchool(inputVal) */
   },
   bindDelLog(e, that) {
     let val = e.currentTarget.dataset.item;
