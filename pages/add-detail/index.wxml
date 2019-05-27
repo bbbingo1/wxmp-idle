@@ -1,4 +1,4 @@
-<!--pages/add-detail/index.wxml-->
+<!-- pages/add-detail/index.wxml -->
 <view class='container'>
   <view class='block1'>
     <navigator class='img-submit' hover-class='none' bindtap='selectImage' wx:if="{{!imgList.length}}">
@@ -7,8 +7,7 @@
     </navigator>
     <view class='img-container' wx:if="{{imgList.length}}">
       <view wx:for="{{imgList}}" class='avatar'>
-        <image class="img" data-index="{{index}}" bindtap="previewImg" src="{{item.img}}">
-        </image>
+        <image class="img" data-index="{{index}}" bindtap="previewImg" src="{{item.img}}"></image>
         <view class="bg-red del-btn" catchtap="deleteImg" data-index="{{index}}">
           <text class="cuIcon-close"></text>
         </view>
@@ -37,22 +36,13 @@
     <view class='type-block'>
       <view class="cu-form-group">
         <view class="title">普通选择</view>
-        <picker bindchange="PickerChange" value="{{type_index}}" range="{{picker}}">
-          <view class="picker">
-            {{type_index?picker[type_index-1]:'请选择类型'}}
-          </view>
+        <picker bindchange="PickerChange" value="{{type_index-1}}" range="{{picker}}">
+          <view class="picker">{{type_index?picker[type_index-1]:'请选择类型'}}</view>
         </picker>
       </view>
     </view>
   </view>
   <view class='submit-container'>
-    <view class='submit' bindtap='submitForm'>
-      发布
-    </view>
-  </view>
-  <view class='cu-load load-modal' wx:if="{{loadModal}}">
-    <!-- <view class='cuIcon-emojifill text-orange'></view> -->
-    <image src='/images/et-uploading1.png' class='png' mode='aspectFit'></image>
-    <view class='gray-text'>{{load_text}}</view>
+    <view class='submit' bindtap='submitForm'>发布</view>
   </view>
 </view>

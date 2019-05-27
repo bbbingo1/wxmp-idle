@@ -51,7 +51,8 @@ Page({
         goods_id: that.goods_id
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json', // 默认值
+        'cookie':wx.getStorageSync("sessionid")//读取cookie
       },
       success(res) {
         console.log(res.data);
@@ -121,7 +122,8 @@ Page({
           },
           method: 'post',
           header: {
-            'content-type': 'application/x-www-form-urlencoded' // 默认值
+            'content-type': 'application/x-www-form-urlencoded', // 默认值
+            'cookie':wx.getStorageSync("sessionid")//读取cookie
           },
           success(res) {
           }
