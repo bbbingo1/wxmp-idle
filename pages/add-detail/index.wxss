@@ -197,3 +197,7 @@
   font-size: 34rpx;
   border-radius: 10rpx;
 }
+
+.gray-text{
+  font-size: 26rpx;
+}

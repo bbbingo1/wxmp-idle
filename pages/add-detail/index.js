@@ -25,6 +25,8 @@ Page({
     price: '',
     type_index: 8,
     picker: ['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他'],
+    loadModal: false,
+    load_text:"正在上传信息"
   },
   //表单更改
   adInputChange: function(e) {
@@ -95,6 +97,7 @@ Page({
     })
   },
 
+  //发布提交
   submitForm() {
     let that = this;
     // let formData = new FormData();
@@ -128,7 +131,17 @@ Page({
       duration: 2000
     })
   },
-
+  //显示加载
+  loadModal() {
+    this.setData({
+      loadModal: true
+    })
+    setTimeout(() => {
+      this.setData({
+        loadModal: false
+      })
+    }, 2000)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
