@@ -1,6 +1,6 @@
-//app.js
+1//app.js
 App({
-  onLaunch: function() {
+  onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -16,18 +16,19 @@ App({
         wx.setStorageSync('js_code', code)
         //登录请求回来之后,读取res的header的cookie
         //这里的sessionid随便写的,就是个唯一标识
-        wx.setStorageSync("sessionid", res.header["Set-Cookie"])
+        let header = {
+          'content-type': 'application/x-www-form-urlencoded',
+          'cookie': wx.getStorageSync("sessionid")//读取cookie
+        };
         wx.request({
           url: 'https://liyan6987.cn/auth/code_to_info',
-          data: { code:code},
-          method:'post',
-          header: {
-            'content-type': 'application/x-www-form-urlencoded', // 默认值
-            'cookie':wx.getStorageSync("sessionid")//读取cookie
-          },
+          data: { code: code },
+          method: 'post',
+          header: header,
           success(res) {
+            wx.setStorageSync("sessionid", res.header["Set-Cookie"])
             // console.log(res)
-            if (res.data.status == true){
+            if (res.data.status == true) {
               that.globalData.user = res.data.user
               // console.log(that.globalData.user)
               wx.setStorageSync('openid', res.data.user.openid)
@@ -35,9 +36,9 @@ App({
             else if (res.data.status == false) {
               wx.navigateTo({
                 url: '/pages/login/index',
-                success: function(res) {},
-                fail: function(res) {},
-                complete: function(res) {},
+                success: function (res) { },
+                fail: function (res) { },
+                complete: function (res) { },
               })
             }
           }
@@ -83,10 +84,10 @@ App({
   },
   globalData: {
     userInfo: null,
-    user:null,
+    user: null,
     openId: null,
     studentId: null,
-    js_code:null,
+    js_code: null,
     globalBGColor: '#0BDDB8 ',
     bgRed: 11,
     bgGreen: 221,

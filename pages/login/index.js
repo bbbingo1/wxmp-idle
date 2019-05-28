@@ -15,7 +15,7 @@ Page({
   //表单更改
   adInputChange: function(e) {
     let that = this;
-    console.log(e)
+    // console.log(e)
     if (e.currentTarget.dataset.obj === "password") {
       that.setData({
         password: e.detail.value,

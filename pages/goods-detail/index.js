@@ -77,15 +77,15 @@ Page({
           case 0: data = {
             text: "我想要它", //or "移除收藏" or“编辑发布”
             style: "beforewant" //or "wanted" or “editItem”
-          };
+          };break;
           case 2: data = {
             text: "编辑发布",
             style: "editItem"
-          };
+          };break;
           case 3: data = {
             text: "移除收藏",
             style: "wanted"
-          };
+          };break;
         }
         that.setData({
           detail: that.data.detail,

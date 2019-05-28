@@ -6,7 +6,7 @@
       <view class='txt'>添加图片</view>
     </navigator>
     <view class='img-container' wx:if="{{imgList.length}}">
-      <view wx:for="{{imgList}}" class='avatar'>
+      <view wx:for="{{imgList}}" wx:if="{{index<9}}" class='avatar'>
         <image class="img" data-index="{{index}}" bindtap="previewImg" src="{{item.img}}"></image>
         <view class="bg-red del-btn" catchtap="deleteImg" data-index="{{index}}">
           <text class="cuIcon-close"></text>

@@ -97,6 +97,67 @@ Page({
     })
   },
 
+  //发布图片
+  uploadDIY(filePaths, successUp, failUp, index, length, goods_id) {
+    let id = goods_id;
+    let url = 'https://liyan6987.cn/goods/upload_imgs'
+    wx.uploadFile({
+      url: url,
+      filePath: filePaths[index],
+      name: 'file',
+      formData: {
+        "pic_num": index,
+        "goods_id": id
+      },
+      header: {
+        'cookie': wx.getStorageSync("sessionid")//读取cookie
+      },
+      success: (res) => {
+        successUp++;
+        if (index == length - 1) {
+          wx.showToast({
+            title: "上传成功",
+            icon: 'success',
+            duration: 2000,
+            success:()=> {
+              this.setData({
+                imgList: [],
+                imgs: [],
+                title: "",
+                descripe: '',
+                price: '',
+                type_index: 8,
+              });
+              wx.navigateTo({
+                url: '/pages/order-list/index?type=' + 0,
+              })
+            }
+          })
+        }
+      },
+      fail: (res) => {
+        failUp++;
+        if (index == length - 1) {
+          wx.showToast({
+            title: "上传错误",
+            icon: 'success',
+            duration: 2000,
+          })
+        }
+      },
+      complete: () => {
+        index++;
+        if (index == length) {
+          wx.hideLoading();
+        }
+        else {
+          //递归调用uploadDIY函数
+          this.uploadDIY(filePaths, successUp, failUp, index, length, id);
+        }
+      }
+    })
+  },
+
   //发布提交
   submitForm() {
     wx.showLoading({
@@ -107,11 +168,15 @@ Page({
     let prices = that.data.price;
     let describe = that.data.descripe;
     let goods_type = that.data.type_index
+    let header = {
+      'content-type': 'application/x-www-form-urlencoded',
+      'cookie': wx.getStorageSync("sessionid")//读取cookie
+    };
     if (that.data.title && that.data.descripe && that.data.price && that.data.type_index) {
       wx.request({
-        url: 'https://liyan6987.cn/goods/upload_imgs',
+        url: 'https://liyan6987.cn/goods/publish_goods',
         method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        header: header,
         data: {
           goods_name: goods_name,
           prices: prices,
@@ -119,23 +184,31 @@ Page({
           goods_type: goods_type
         },
         success(res) {
-          console.log(res)
           //发送失败：未登录等原因
           if (res.data.status == false) {
+            if (res.data.status == "login required") {
+              wx.navigateTo({
+                url: '/pages/login/index',
+                success: function (res) { },
+                fail: function (res) { },
+                complete: function (res) { },
+              })
+            }
             wx.showToast({
               title: res.data.message,
               icon: 'none',
-              image: '/images/close.png',
+              image: '/images/info.png',
               duration: 2000,
             })
           }
           //发送商品信息成功
-          else {
+          else if (res.data.status == true) {
             //无图片
-            if (that.data.imgList.length != 0) {
+            if (that.data.imgList.length == 0) {
               wx.showToast({
                 title: '缺少图片',
-                icon: 'success',
+                icon: 'none',
+                image: '/images/info.png',
                 duration: 2000,
               })
             }
@@ -144,20 +217,15 @@ Page({
               wx.showLoading({
                 title: '上传图片',
               })
-              let url = 'https://liyan6987.cn/goods/publish_goods'
+              let goods_id = res.data.goods_id;
               let filePaths = that.data.imgList.map(function (key) {
-                key.img
-              });//图片路径数组
+                return key.img
+              }).slice(0, 9);//图片路径数组
               let successUp = 0;//成功总数
               let failUp = 0;//失败总数
               let length = filePaths.length;//图片数目
               let index = 0;//正在上传的第几个
-              wx.uploadFile({
-                url: url,
-                filePaths: filePaths[index],
-                name: 'file',
-
-              })
+              that.uploadDIY(filePaths, successUp, failUp, index, length, goods_id);
             }
           }
         },
@@ -169,7 +237,6 @@ Page({
             duration: 2000,
           })
         }
-
       })
     } else {
       wx.showToast({
@@ -179,33 +246,6 @@ Page({
         duration: 2000,
       })
     }
-    // let formData = new FormData();
-    // let imgs = that.data.imgList.map(function (key) {
-    //   key.img
-    // });
-    // formData.append("file", imgs);
-    // formData.append("goods_name", that.data.title);
-    // formData.append("prices", that.data.price);
-    // formData.append("describe", that.data.descripe);
-    // formData.append("goods_type", that.data.type_index);
-    // wx.request({
-    //   url: 'https://liyan6987.cn/auth/login',
-    //   data: formData,
-    //   method: 'post',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded',
-    // 'cookie':wx.getStorageSync("sessionid")//读取cookie 
-    // },
-    //   success(res) {
-    //     wx.showToast({
-    //       title: '发布成功',
-    //       icon: 'success',
-    //       duration: 2000,
-    //       success:function(){
-
-    //       }
-    //     })
-    //   }
-    // })
   },
   //显示加载
   loadModal() {

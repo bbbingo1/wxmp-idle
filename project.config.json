@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,12 @@
 					"name": "发布",
 					"pathName": "pages/add/add",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加发布",
+					"pathName": "pages/add-detail/index",
+					"scene": null
 				}
 			]
 		}
