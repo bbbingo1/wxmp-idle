@@ -44,6 +44,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     that.goods_id = options.goods_id;
+    console.log(options);
     wx.request({ //发送请求
       url: 'https://liyan6987.cn/goods/get_goods_detail', // 仅为示例，并非真实的接口地址
       type: 'get',

@@ -74,12 +74,14 @@ Page({
 							goods_img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2898303061,2414295992&fm=26&gp=0.jpg',
 							goods_xiaoliang: '0',
 							goods_price: '110'
-						};
+            };
+            item.goods_id = data.goods[i].goods_id;
 						item.goods_title = data.goods[i].name;
-						item.goods_img = "https://liyan6987.cn/static/" + data.goods[i].picture["1"];
+						item.goods_img = "https://liyan6987.cn/static/" + data.goods[i].picture["0"];
 						item.goods_price = data.goods[i].price
 						dataList.push(item);
-					}
+          }
+          console.log(dataList);
 					that.setData({
 						dataList:dataList
 					})
