@@ -1,5 +1,17 @@
 /* pages/order-list/index.wxss */
 
+.header,.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 28rpx;
+}
+.bottom{
+  
+}
 .tab-h {
   box-sizing: border-box;
   overflow: hidden;

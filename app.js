@@ -18,7 +18,7 @@ App({
         //这里的sessionid随便写的,就是个唯一标识
         let header = {
           'content-type': 'application/x-www-form-urlencoded',
-          'cookie': wx.getStorageSync("sessionid")//读取cookie
+          // 'cookie': wx.getStorageSync("sessionid")//读取cookie
         };
         wx.request({
           url: 'https://liyan6987.cn/auth/code_to_info',

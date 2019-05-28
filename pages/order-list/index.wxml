@@ -7,22 +7,22 @@
   </scroll-view>
   <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
     <swiper-item wx:for="{{[0,1,2,3]}}">
-      <view class="header">
+      <view class="header" hidden="{{hideHeader}}">
         <view>下拉刷新中……</view>
         <!-- <view>{{refreshTime}}</view> -->
       </view>
-      <scroll-view scroll-y="true" class="scoll-h" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+      <scroll-view scroll-y="true" class="scoll-h" bindscrolltoupper="refresh" bindscrolltolower="loadMore" lower-threshold="{{lowerThreshold}}" upper-threshold="{{upperThreshold}}">
         <!-- 无订单情况 -->
-        <view class="no-order" wx:if="{{!orderList[index].length}}">
+        <view class="no-order" wx:if="{{!orderList[index].length&&hideHeader}}">
           <image src="/images/no-order.png" class="no-order-img"></image>
           <view class="text">暂无订单</view>
         </view>
         <!-- 有订单情况 -->
         <view wx:if="{{orderList[index].length}}">
           <block wx:for="{{orderList[index]}}" wx:key="{{index}}">
-            <view class="item-ans" data-id="{{item.id}}" bindtap='getOrder'>
+            <view class="item-ans" data-id="{{item.goods_id}}" bindtap='getOrder'>
               <view class="avatar">
-                <image class="img" src="{{item.picture[1]}}"></image>
+                <image class="img" src="{{item.picture[1]}}" mode="scaleToFill"></image>
               </view>
               <view class="expertInfo">
                 <view class="name">{{item.name}}</view>
@@ -34,11 +34,11 @@
           </block>
         </view>
         <view class='swiper-bottom'></view>
+        <view class="bottom" hidden="{{hideBottom}}">
+          <view>{{loadMoreData}}</view>
+          <!-- <view>{{refreshTime}}</view> -->
+        </view>
       </scroll-view>
-      <view class="bottom">
-        <view>{{loadMoreData}}</view>
-        <!-- <view>{{refreshTime}}</view> -->
-      </view>
     </swiper-item>
   </swiper>
 </view>

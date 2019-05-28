@@ -12,6 +12,8 @@ Page({
     statusType: ["我发布的", "我卖出的", "我买到的", "我想要的"],
     winHeight: "", //窗口高度
     scrollLeft: 0, //tab标题的滚动条位置
+    lowerThreshold: 50,
+    upperThreshold: 50,
     hideHeader: true,
     hideBottom: true,
     refreshTime: '', // 刷新的时间 
@@ -214,6 +216,7 @@ Page({
 
   //跳转
   getOrder: function (e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '/pages/goods-detail/index?id=' + e.currentTarget.dataset.id,
     })
@@ -254,7 +257,8 @@ Page({
     var date = new Date();
     that.setData({
       refreshTime: date.toLocaleTimeString(),
-      hideHeader: false
+      hideHeader: false,
+      hideBottom: true
     })
     that.clearCache(currentTab);
     that.getUserGoods(Number(currentTab), page[currentTab])
@@ -264,19 +268,14 @@ Page({
   loadMore: function () {
     var that = this;
     var currentTab = that.data.currentTab
-    if (page[currentTab] == allPages[currentTab]) {
-      //已经是最后一页
-      self.setData({
-        loadMoreData: '已经到顶'
+    if (that.data.orderList[currentTab].length) {
+      console.log('上拉加载更多');
+      var page_index = page[currentTab]
+      that.setData({
+        hideBottom: false
       })
-      return;
+      that.getUserGoods(Number(currentTab), page_index);//后台获取新数据并追加渲染
     }
-    console.log('上拉加载更多');
-    var page_index = page[currentTab]
-    that.setData({
-      hideBottom: false
-    })
-    that.getUserGoods(Number(currentTab), page_index);//后台获取新数据并追加渲染
   },
 
   //获取页面数据
@@ -309,7 +308,7 @@ Page({
             if (pg == 1) {
               //初始加载/下拉刷新
               setTimeout(function () {
-                allPages[currentTab] = res.data.total;
+                // allPages[currentTab] = res.data.allpages;
                 let item = that.data.orderList;
                 item[currentTab] = res.data.goods;
                 that.setData({
@@ -320,16 +319,25 @@ Page({
             }
             else {
               //上拉触底获取更多
-              setTimeout(function () {
-                console.log('加载更多');
-                allPages[currentTab] = res.data.total;
-                let item = that.data.orderList;
-                item[currentTab].push.apply(item[currentTab], res.data.goods);
+              if (res.data.total == 0) {
+                //已经是最后一页
                 that.setData({
-                  orderList: item,
-                  hideBottom: true
+                  loadMoreData: '已经到底喽~'
                 })
-              }, 400)
+                return;
+              }
+              else {
+                setTimeout(function () {
+                  console.log('加载更多');
+                  // allPages[currentTab] = res.data.allpages;
+                  let item = that.data.orderList;
+                  item[currentTab].push.apply(item[currentTab], res.data.goods);
+                  that.setData({
+                    orderList: item,
+                    hideBottom: true
+                  })
+                }, 400)
+              }
             }
             page[currentTab]++;
           } else {
