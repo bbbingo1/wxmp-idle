@@ -42,7 +42,6 @@ Page({
     },
     onLoad:function(options){
 				var that = this;
-				console.log(options.type);
         that.data.type = options.type;
         wx.request({    //发送请求
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
@@ -74,12 +73,13 @@ Page({
 							goods_img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2898303061,2414295992&fm=26&gp=0.jpg',
 							goods_xiaoliang: '0',
 							goods_price: '110'
-						};
+            };
+            item.goods_id = data.goods[i].goods_id;
 						item.goods_title = data.goods[i].name;
-						item.goods_img = "https://liyan6987.cn/static/" + data.goods[i].picture["1"];
+						item.goods_img = "https://liyan6987.cn/static/" + data.goods[i].picture["0"];
 						item.goods_price = data.goods[i].price
 						dataList.push(item);
-					}
+          }
 					that.setData({
 						dataList:dataList
 					})

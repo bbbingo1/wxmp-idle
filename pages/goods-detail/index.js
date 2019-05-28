@@ -55,7 +55,6 @@ Page({
         'cookie': wx.getStorageSync("sessionid")//读取cookie
       },
       success(res) {
-        console.log(res.data);
         that.data.detail.imgs = [];
         Object.keys(res.data.picture).forEach(function (key) {
           that.data.detail.imgs.push("https://liyan6987.cn/static/" + res.data.picture[key]);
@@ -63,16 +62,15 @@ Page({
 
         that.data.detail.describe = res.data.describe;
         that.data.detail.title = res.data.name;
-        ['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他']
-        switch (res.data.type) {
-          case 1: that.data.detail.goods_type = "食品"; break;
-          case 2: that.data.detail.goods_type = "服饰"; break;
-          case 3: that.data.detail.goods_type = "图书"; break;
-          case 4: that.data.detail.goods_type = "生活用品"; break;
-          case 5: that.data.detail.goods_type = "办公用品"; break;
-          case 6: that.data.detail.goods_type = "玩具乐器"; break;
-          case 7: that.data.detail.goods_type = "数码产品"; break;
-          case 8: that.data.detail.goods_type = "其他"; break;
+        switch(res.data.type){
+          case 1:that.data.detail.goods_type = "食品";break;
+          case 2:that.data.detail.goods_type = "服饰";break;
+          case 3:that.data.detail.goods_type = "图书";break;
+          case 4:that.data.detail.goods_type = "生活用品";break;
+          case 5:that.data.detail.goods_type = "办公用品";break;
+          case 6:that.data.detail.goods_type = "玩具娱乐";break;
+          case 7:that.data.detail.goods_type = "数码用品";break;
+          case 8:that.data.detail.goods_type = "其他";break;
         }
         that.data.detail.price = res.data.price;
         that.data.seller.name = res.data.poster.name;

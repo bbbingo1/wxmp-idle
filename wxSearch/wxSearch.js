@@ -24,7 +24,6 @@ module.exports={
     })
   },
   bindGoSearch(e,that){
-    console.log(e,that);
     let searchList_stroage = getStorage('searchList') || [];
     const inputVal = that.data.tabData.inputVal;
     searchList_stroage.push(inputVal)
@@ -81,7 +80,6 @@ module.exports={
     })
   },
   _setData(that, param){
-    console.log(that);
     let tabData = that.data.tabData;
     for (var key in param){
       tabData[key] = param[key];
@@ -101,7 +99,6 @@ module.exports={
       title: '调往搜索页面',
       content: `你的传值是${val}，带上它去新页面`,
     })
-    console.log(val)
     // wx.redirectTo({
     //   url: `/pages/schools/schools?item=${val}`
     // })
