@@ -24,15 +24,16 @@ module.exports={
     })
   },
   bindGoSearch(e,that){
+    console.log(e,that);
     let searchList_stroage = getStorage('searchList') || [];
     const inputVal = that.data.tabData.inputVal;
     searchList_stroage.push(inputVal)
-
+    that.data.tabData.inputVal2 = inputVal;
     setStorage('searchList', searchList_stroage)
     this._setData(that, {
       inputVal: ''
     })
-    this.goSchool(inputVal)
+/*     this.goSchool(inputVal) */
   },
   bindDelLog(e, that) {
     let val = e.currentTarget.dataset.item;
@@ -80,6 +81,7 @@ module.exports={
     })
   },
   _setData(that, param){
+    console.log(that);
     let tabData = that.data.tabData;
     for (var key in param){
       tabData[key] = param[key];

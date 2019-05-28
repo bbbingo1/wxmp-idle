@@ -8,11 +8,11 @@
     <view class='list_search'>
       <view class='li_list_search' wx:for="{{searchList}}" wx:key="{{index}}" wx:if="{{index<3 || searchAllShow}}" catchtap="bindGoSchool" data-item="{{item}}">
         <view class="icon-waiting">
-          <image src="/assets/images/icon-waiting.png"></image>
+          <image src="/images/icon-waiting.png" style="width:10px;height:10px;margin-bottom:10%;margin-right:10%;position:relative;"></image>
         </view>
         <text class="pl30 colGray">{{item}}</text>
-        <view class='icon-cancel rightFlex' catchtap="bindDelLog" data-item="{{item}}">
-          <image src="/assets/images/icon-cancel.png"></image>
+        <view class='icon-cancel rightFlex' catchtap="bindDelLog" data-item="{{item}}" style="position:absolute;right:5%;">
+          <image src="/images/icon-cancel.png" style="width:10px;height:10px;"></image>
         </view>
       </view>
     </view>
@@ -20,7 +20,7 @@
       <view class="icon-waiting"></view>
       <text class="pl30 colGray">全部搜索记录</text>
       <view class='icon-down rightFlex'>
-        <image src="/assets/images/icon-down.png"></image>
+        <image src="/images/icon-down.png" style="width:10px;height:6px;right:-1500%;top:-150%;position:relative;"></image>
       </view>
     </view>
     <view class='li_list_search' catchtap="bindClearSearch" wx:if="{{searchList.length>0 && searchAllShow}}">

@@ -10,6 +10,7 @@
     "pages/add-detail/index",
     "pages/login/index",
     "pages/Search/Search",
+    "pages/goods-list/goods-list",
     "components/chat/chat"
   ],
   "window": {

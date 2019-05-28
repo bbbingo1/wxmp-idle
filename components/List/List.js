@@ -1,6 +1,5 @@
 Component({
     data: {
-
         iconList: [{
           icon: 'read',
           color: 'red',
@@ -55,4 +54,11 @@ Component({
         gridCol:4,
         skin: false
       },
+      methods:{
+        GoSearch:function(){
+          wx.navigateTo({
+            url:"/pages/goods-list/goods-list"
+          });
+        }
+      }
 })
