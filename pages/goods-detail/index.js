@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods_id:null,
+    goods_id: null,
     // 商品详情
     detail: {
       imgs: ['/images/swiper1.jpg', '/images/swiper2.jpg', '/images/swiper3.jpg'],
       title: "润＋+豪华汽车2013款 1.8TSI豪华型-个人二手+海贼王珍藏版手办",
       price: "11004",
-      goods_type: "二手车",
+      goods_type: "生活用品",//['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他'],
       describe: "大三男车主，上下课代步用车，1.8t豪华型，车速最高可达*km/h，8成新，发动机变速箱良好"
     },
     // 卖家信息
@@ -27,7 +27,7 @@ Page({
       text: "我想要它", //or "移除收藏" or“编辑发布”
       style: "beforewant" //or "wanted" or “editItem”
     },
-    relation_id:null,//用户商品关系:0普通关系；1商品已卖出；2我发布的商品；3我收藏的商品
+    relation_id: null,//用户商品关系:0普通关系；1商品已卖出；2我发布的商品；3我收藏的商品
     indicatorDots: true, //指示点
     vertical: false, //横向
     autoplay: true, //自动播放
@@ -41,7 +41,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this;
     that.goods_id = options.goods_id;
     wx.request({ //发送请求
@@ -52,67 +52,73 @@ Page({
       },
       header: {
         'content-type': 'application/json', // 默认值
-        'cookie':wx.getStorageSync("sessionid")//读取cookie
+        'cookie': wx.getStorageSync("sessionid")//读取cookie
       },
       success(res) {
         console.log(res.data);
         that.data.detail.imgs = [];
-        Object.keys(res.data.picture).forEach(function(key) {
+        Object.keys(res.data.picture).forEach(function (key) {
           that.data.detail.imgs.push("https://liyan6987.cn/static/" + res.data.picture[key]);
         })
 
         that.data.detail.describe = res.data.describe;
         that.data.detail.title = res.data.name;
-        /*         switch(res.data.type){
-                  case 1:that.data.detail.goods_type = "食品";break;
-                  case 2:that.data.detail.goods_type = "数码产品";break;
-                } */
-        that.data.detail.goods_type = res.data.type;
+        ['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他']
+        switch (res.data.type) {
+          case 1: that.data.detail.goods_type = "食品"; break;
+          case 2: that.data.detail.goods_type = "服饰"; break;
+          case 3: that.data.detail.goods_type = "图书"; break;
+          case 4: that.data.detail.goods_type = "生活用品"; break;
+          case 5: that.data.detail.goods_type = "办公用品"; break;
+          case 6: that.data.detail.goods_type = "玩具乐器"; break;
+          case 7: that.data.detail.goods_type = "数码产品"; break;
+          case 8: that.data.detail.goods_type = "其他"; break;
+        }
         that.data.detail.price = res.data.price;
-        that.data.seller.name = res.data.poster.name; 
-        that.data.seller.descripe = res.data.poster.signature; 
-        that.data.relation_id = res.data.relation_id; 
+        that.data.seller.name = res.data.poster.name;
+        that.data.seller.descripe = res.data.poster.signature;
+        that.data.relation_id = res.data.relation_id;
         let data;
         switch (res.data.relation_id) {
           case 0: data = {
             text: "我想要它", //or "移除收藏" or“编辑发布”
             style: "beforewant" //or "wanted" or “editItem”
-          };break;
+          }; break;
           case 2: data = {
             text: "编辑发布",
             style: "editItem"
-          };break;
+          }; break;
           case 3: data = {
             text: "移除收藏",
             style: "wanted"
-          };break;
+          }; break;
         }
         that.setData({
           detail: that.data.detail,
           seller: that.data.seller,
-          if_want:data
+          if_want: data
         })
 
       }
     });
   },
-  tapChat: function() {
+  tapChat: function () {
     wx.navigateTo({
       url: "/components/chat/chat"
     });
   },
-  tapTarget:function(e){
+  tapTarget: function (e) {
     console.log(e)
     let that = this
     let data;
-    switch (e.currentTarget.dataset.target){
-      case 0: 
+    switch (e.currentTarget.dataset.target) {
+      case 0:
         this.setData({
           if_want: {
             text: "移除收藏", //or "移除收藏" or“编辑发布”
             style: "wanted" //or "wanted" or “editItem”
           },
-          relation_id:3
+          relation_id: 3
         });
         wx.request({
           url: 'https://liyan6987.cn/add_goods_relation',
@@ -123,19 +129,19 @@ Page({
           method: 'post',
           header: {
             'content-type': 'application/x-www-form-urlencoded', // 默认值
-            'cookie':wx.getStorageSync("sessionid")//读取cookie
+            'cookie': wx.getStorageSync("sessionid")//读取cookie
           },
           success(res) {
           }
         })
-      case 2: 
+      case 2:
       // wx.navigateTo({
       //   url: '/pages/edit-detail/index',
       //   success: function(res) {},
       //   fail: function(res) {},
       //   complete: function(res) {},
       // })
-      case 3: 
+      case 3:
         this.setData({
           if_want: {
             text: "我想要它", //or "移除收藏" or“编辑发布”
@@ -148,49 +154,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })
