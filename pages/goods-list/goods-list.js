@@ -42,7 +42,6 @@ Page({
     },
     onLoad:function(options){
 				var that = this;
-				console.log(options.type);
         that.data.type = options.type;
         wx.request({    //发送请求
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
@@ -81,7 +80,6 @@ Page({
 						item.goods_price = data.goods[i].price
 						dataList.push(item);
           }
-          console.log(dataList);
 					that.setData({
 						dataList:dataList
 					})

@@ -64,11 +64,17 @@ Page({
 
         that.data.detail.describe = res.data.describe;
         that.data.detail.title = res.data.name;
-        /*         switch(res.data.type){
-                  case 1:that.data.detail.goods_type = "食品";break;
-                  case 2:that.data.detail.goods_type = "数码产品";break;
-                } */
-        that.data.detail.goods_type = res.data.type;
+        console.log(res.data.type)
+        switch(res.data.type){
+          case 1:that.data.detail.goods_type = "食品";break;
+          case 2:that.data.detail.goods_type = "服饰";break;
+          case 3:that.data.detail.goods_type = "图书";break;
+          case 4:that.data.detail.goods_type = "生活用品";break;
+          case 5:that.data.detail.goods_type = "办公用品";break;
+          case 6:that.data.detail.goods_type = "玩具娱乐";break;
+          case 7:that.data.detail.goods_type = "数码用品";break;
+          case 8:that.data.detail.goods_type = "其他";break;
+        }
         that.data.detail.price = res.data.price;
         that.data.seller.name = res.data.poster.name; 
         that.data.seller.descripe = res.data.poster.signature; 
