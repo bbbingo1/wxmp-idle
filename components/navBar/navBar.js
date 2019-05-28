@@ -160,7 +160,7 @@ Component({
 			var that = this;
 			console.log(that.data.dataSet)
 			wx.navigateTo({
-				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[0].id
+				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[cardId - 31].id
 			});
 		},
 	},

@@ -3,5 +3,6 @@
   "navigationBarBackgroundColor": "white",
   "backgroundTextStyle": "light",
   "navigationBarTextStyle": "black",
-  "onReachBottomDistance": 50
+  "onReachBottomDistance": 50,
+  "usingComponents": {}
 }
