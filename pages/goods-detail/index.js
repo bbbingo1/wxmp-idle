@@ -70,10 +70,10 @@ Page({
         that.data.detail.goods_type = res.data.type;
         that.data.detail.price = res.data.price;
         that.data.seller.name = res.data.poster.name; 
-        that.data.seller.signature = res.data.poster.signature; 
-        that.data.seller.relation_id = res.data.poster.relation_id; 
+        that.data.seller.descripe = res.data.poster.signature; 
+        that.data.relation_id = res.data.relation_id; 
         let data;
-        switch (res.data.poster.relation_id) {
+        switch (res.data.relation_id) {
           case 0: data = {
             text: "我想要它", //or "移除收藏" or“编辑发布”
             style: "beforewant" //or "wanted" or “editItem”
@@ -115,7 +115,7 @@ Page({
           relation_id:3
         });
         wx.request({
-          url: 'https://liyan6987.cn/add_goods',
+          url: 'https://liyan6987.cn/add_goods_relation',
           data: {
             goods_id: that.goods_id,
             relation_id: 1,

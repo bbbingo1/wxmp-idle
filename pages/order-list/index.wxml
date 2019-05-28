@@ -22,7 +22,7 @@
           <block wx:for="{{orderList[index]}}" wx:key="{{index}}">
             <view class="item-ans" data-id="{{item.goods_id}}" bindtap='getOrder'>
               <view class="avatar">
-                <image class="img" src="{{item.picture[1]}}" mode="scaleToFill"></image>
+                <image class="img" src="{{'https://liyan6987.cn/static/'+item.picture[0]}}" mode="scaleToFill"></image>
               </view>
               <view class="expertInfo">
                 <view class="name">{{item.name}}</view>

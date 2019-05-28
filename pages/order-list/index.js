@@ -218,7 +218,7 @@ Page({
   getOrder: function (e) {
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '/pages/goods-detail/index?id=' + e.currentTarget.dataset.id,
+      url: '/pages/goods-detail/index?goods_id=' + e.currentTarget.dataset.id,
     })
   },
 
