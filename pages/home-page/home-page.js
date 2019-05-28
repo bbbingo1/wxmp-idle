@@ -54,9 +54,6 @@ Page({
     },{
       name: "其他",
       Egname: "Else"
-    },  {
-      name: "二手车",
-      Egname: "car"
     }],
   },
   loadList: function (type, page) {   //加载首页瀑布流数据
@@ -73,7 +70,7 @@ Page({
         'cookie':wx.getStorageSync("sessionid")//读取cookie
       },
       success(res) {
-        console.log(res.data);
+/*         console.log(res.data); */
         if(res.data.message == "params error"){
           return;
         }

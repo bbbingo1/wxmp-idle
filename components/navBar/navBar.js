@@ -45,9 +45,6 @@ Component({
 		  },{
 			name: "其他",
 			Egname: "Else"
-		  },  {
-			name: "二手车",
-			Egname: "car"
 		  }],
 		brick_option: {
 			backgroundColor: '#000',
@@ -163,7 +160,7 @@ Component({
 			var that = this;
 			console.log(that.data.dataSet)
 			wx.navigateTo({
-				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[event.detail.card_id - 1].id
+				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[0].id
 			});
 		},
 	},

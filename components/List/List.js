@@ -4,7 +4,7 @@ Component({
           icon: 'read',
           color: 'red',
           badge: 120,
-          name: '书籍'
+          name: '图书'
         }, {
           icon: 'mobilefill',
           color: 'orange',
@@ -55,9 +55,13 @@ Component({
         skin: false
       },
       methods:{
-        GoSearch:function(){
+        GoSearch:function(e){
+          console.log(e);
+          var that = this;
+          var index = e.currentTarget.dataset.idx
+          console.log(index);
           wx.navigateTo({
-            url:"/pages/goods-list/goods-list"
+            url:"/pages/goods-list/goods-list?type=" + that.data.iconList[index].name + "&page=" + 0 
           });
         }
       }
