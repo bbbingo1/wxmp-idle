@@ -18,55 +18,37 @@ Component({
 		navList: [{
 			name: "附近",
 			Egname: "nearby"
-		}, {
+		  }, {
 			name: "推荐",
 			Egname: "Recommend"
-		}, {
+		  }, {
 			name: "食品",
 			Egname: "food"
-		}, {
+		  }, {
 			name: "服饰",
 			Egname: "Clothes"
-		}, {
+		  },{
 			name: "图书",
 			Egname: "Book"
-		}, {
+		  },{
 			name: "生活用品",
 			Egname: "DailyUse"
-		}, {
+		  },{
 			name: "办公用具",
 			Egname: "OfficeEquipment"
-		}, {
+		  },{
 			name: "玩具乐器",
 			Egname: "Toymusicalinstrument"
-		}, {
+		  },{
 			name: "数码用品",
 			Egname: "Electronics"
-		}, {
-			name: "手机",
-			Egname: "mobiles"
-		}, {
+		  },{
+			name: "其他",
+			Egname: "Else"
+		  },  {
 			name: "二手车",
 			Egname: "car"
-		}, {
-			name: "平板电脑",
-			Egname: "TabletPC"
-		}, {
-			name: "游戏交易",
-			Egname: "Game"
-		}, {
-			name: "家用电器",
-			Egname: "HouseholdElectricAppliances"
-		}, {
-			name: "运动户外",
-			Egname: "Outdoorsport"
-		}, {
-			name: "票务卡券",
-			Egname: "Ticketing"
-		}, {
-			name: "电脑",
-			Egname: ""
-		}],
+		  }],
 		brick_option: {
 			backgroundColor: '#000',
 			fontColor: '#333',
@@ -81,7 +63,7 @@ Component({
 			food: [],
 			Electronics: [],
 			Clothes: [],
-			mobiles: [],
+			Else: [],
 			Book: [],
 			car: [],
 			TabletPC: [],
@@ -91,9 +73,9 @@ Component({
 			Outdoorsport: [],
 			Ticketing: [],
 			Computer: [],
-			DailyUse: [],
-			OfficeEquipment: [],
-		},
+			DailyUse:[],
+			OfficeEquipment:[],
+		  },
 		dataSet: [
 			{
 				id: '1',
