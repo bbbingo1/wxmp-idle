@@ -11,7 +11,7 @@ Page({
       food: [],
       Electronics: [],
       Clothes: [],
-      mobiles: [],
+      Else: [],
       Book: [],
       car: [],
       TabletPC: [],
@@ -52,29 +52,11 @@ Page({
       name: "数码用品",
       Egname: "Electronics"
     },{
-      name: "手机",
-      Egname: "mobiles"
+      name: "其他",
+      Egname: "Else"
     },  {
       name: "二手车",
       Egname: "car"
-    }, {
-      name: "平板电脑",
-      Egname: "TabletPC"
-    }, {
-      name: "游戏交易",
-      Egname: "Game"
-    }, {
-      name: "家用电器",
-      Egname: "HouseholdElectricAppliances"
-    }, {
-      name: "运动户外",
-      Egname: "Outdoorsport"
-    }, {
-      name: "票务卡券",
-      Egname: "Ticketing"
-    }, {
-      name: "电脑",
-      Egname: ""
     }],
   },
   loadList: function (type, page) {   //加载首页瀑布流数据
@@ -114,7 +96,7 @@ Page({
                 "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558888395355&di=304731884badde12956a40953e49849b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180802%2F9a4f36a3935b437d8f08ca0819674f4c.jpeg"
               ]
             };
-            item.id = i + 1;
+            item.id = res.data.goods[i].goods_id;
             item.content = res.data.goods[i].describe;
             item.user.username = res.data.goods[i].name;
             item.images = [];
