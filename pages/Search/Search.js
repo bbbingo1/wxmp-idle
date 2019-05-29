@@ -42,7 +42,7 @@ Component({
           WxSearch.bindGoSearch(e,that);
           console.log(that.data.tabData.inputVal2);
           wx.navigateTo({
-            url:"/pages/goods-list/goods-list?type=" + that.data.tabData.inputVal2
+            url:"/pages/goods-list/goods-list?keyword=" + that.data.tabData.inputVal2
           });
         },
         bindDelLog: function(e){
