@@ -19,6 +19,9 @@ Page({
     copyright: 'PickledFish_Tuji101'
   },
 
+    /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function(options) {
     this.setData({
       background_color: app.globalData.globalBGColor,
@@ -81,5 +84,20 @@ Page({
         url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
       })
     // }
-  }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    app.globalData.currentRouter = this.route
+    console.log(app.globalData.currentRouter)
+  },
 })

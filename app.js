@@ -83,6 +83,7 @@ App({
 
   },
   globalData: {
+    currentRouter:null,
     userInfo: null,
     user: null,
     openId: null,

@@ -2,5 +2,6 @@
   "navigationBarTitleText": "订单列表",
   "navigationBarBackgroundColor": "white",
   "backgroundTextStyle": "light",
-  "navigationBarTextStyle": "black"
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
 }

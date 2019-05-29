@@ -10,17 +10,17 @@ Page({
     goods_id: null,
     // 商品详情
     detail: {
-      imgs: ['/images/swiper1.jpg', '/images/swiper2.jpg', '/images/swiper3.jpg'],
-      title: "润＋+豪华汽车2013款 1.8TSI豪华型-个人二手+海贼王珍藏版手办",
-      price: "11004",
-      goods_type: "生活用品",//['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他'],
-      describe: "大三男车主，上下课代步用车，1.8t豪华型，车速最高可达*km/h，8成新，发动机变速箱良好"
+      imgs: ['/images/timg.gif'],
+      title: "标题加载中..",
+      price: "",
+      goods_type: "",//['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他'],
+      describe: ""
     },
     // 卖家信息
     seller: {
       avatar: '/images/avatar.png',
-      name: '彭星星',
-      descripe: "16级计算机网络工程4班"
+      name: '',
+      descripe: ""
     },
     //我想要它or移除收藏or编辑发布
     if_want: {

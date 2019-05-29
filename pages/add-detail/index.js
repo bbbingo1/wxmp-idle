@@ -1,4 +1,6 @@
 // pages/add-detail/index.js
+const app = getApp()
+
 Page({
 
   /**
@@ -290,7 +292,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    const router = app.globalData.currentRouter;
+    app.globalData.currentRouter = this.route;
+    wx.switchTab({
+      url: '/'+router,
+    });
   },
 
   /**

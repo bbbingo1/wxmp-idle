@@ -12,11 +12,11 @@ Page({
     statusType: ["我发布的", "我卖出的", "我买到的", "我想要的"],
     winHeight: "", //窗口高度
     scrollLeft: 0, //tab标题的滚动条位置
-    lowerThreshold: 50,
-    upperThreshold: 50,
-    hideHeader: true,
+    lowerThreshold: '30rpx',
+    // upperThreshold: 50,
+    // hideHeader: true,
     hideBottom: true,
-    refreshTime: '', // 刷新的时间 
+    // refreshTime: '', // 刷新的时间 
     loadMoreData: '加载更多……',
     orderList: [
       [
@@ -253,11 +253,11 @@ Page({
   refresh: function () {
     var that = this;
     let currentTab = that.data.currentTab
-    console.log('下拉刷新');
+    // console.log('下拉刷新');
     var date = new Date();
     that.setData({
-      refreshTime: date.toLocaleTimeString(),
-      hideHeader: false,
+      // refreshTime: date.toLocaleTimeString(),
+      // hideHeader: false,
       hideBottom: true
     })
     that.clearCache(currentTab);
@@ -313,7 +313,7 @@ Page({
                 item[currentTab] = res.data.goods;
                 that.setData({
                   orderList: item,
-                  hideHeader: true
+                  // hideHeader: true
                 })
               }, 400)
             }
@@ -336,7 +336,7 @@ Page({
                     orderList: item,
                     hideBottom: true
                   })
-                }, 400)
+                }, 500)
               }
             }
             page[currentTab]++;
@@ -356,7 +356,8 @@ Page({
             image: '/images/info.png',
             duration: 2000,
           })
-        }
+        },
+        complete() { wx.stopPullDownRefresh() }
       })
     }
   },
@@ -429,7 +430,12 @@ Page({
   onUnload: function () {
 
   },
-
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.refresh();
+  },
 
   /**
    * 用户点击右上角分享
