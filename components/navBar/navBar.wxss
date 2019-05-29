@@ -1,2 +1,5 @@
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
+.list-box_content{
+  font-size: 28rpx;
+}

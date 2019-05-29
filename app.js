@@ -86,7 +86,6 @@ App({
     currentRouter:null,
     userInfo: null,
     user: null,
-    openId: null,
     studentId: null,
     js_code: null,
     globalBGColor: '#0BDDB8 ',

@@ -26,7 +26,7 @@
               </view>
               <view class="expertInfo">
                 <view class="name">{{item.name}}</view>
-                <view class="type">{{item.type}}</view>
+                <view class="price">￥{{item.price}}</view>
                 <view class="poster">{{item.poster.name}}，{{item.poster.signature}}</view>
               </view>
               <navigator catchtap="tapChat" url="" class="askBtn">问TA</navigator>

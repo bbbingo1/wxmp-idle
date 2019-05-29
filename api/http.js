@@ -1,3 +1,4 @@
+// const lib = require('../lib/request')
 //检查是否授权绑定学号
 function checkLogin() {
   wx.request({ //发送请求
@@ -5,7 +6,7 @@ function checkLogin() {
     method: 'post',
     header: {
       'content-type': 'application/x-www-form-urlencoded', // 默认值
-      'cookie': wx.getStorageSync("sessionid")//读取cookie
+      'cookie': wx.getStorageSync("sessionid") //读取cookie
     },
     success(res) {
       console.log(res)
@@ -18,7 +19,11 @@ function checkLogin() {
   });
 };
 
-//登录接口
+/**
+ * 登录学号
+ * @param {number} account
+ * @param {string} password  //1:卖出;2:发布;3:喜欢
+ */
 function login(account, password) {
   var result = 1;
   wx.login({
@@ -52,13 +57,44 @@ function login(account, password) {
   })
   return result;
 };
-//上传图片
-function uploadImg() {
 
+/**
+ * 添加到喜欢、卖出、发布
+ * @param {string} id
+ * @param {number} relation  //1:卖出;2:发布;3:喜欢
+ */
+function addGoodsRelation(id, relation) {
+  var promise = new Promise((resolve, reject) => {
+    var that = this;
+    wx.request({
+      url: 'https://liyan6987.cn/user/add_goods_relation',
+      data: {
+        goods_id: id,
+        relation_id: relation, //添加到喜欢
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
+        'cookie': wx.getStorageSync("sessionid") //读取cookie
+      },
+      success(res) {
+        if (res.statusCode == 200) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      },
+      fail(err) {
+        reject(err);
+      }
+    })
+  })
+  return promise;
 }
 
 
 module.exports = {
   checkLogin,
-  login
+  login,
+  addGoodsRelation
 }
