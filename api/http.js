@@ -35,9 +35,10 @@ function login(account, password) {
         method: 'post',
         header: {
           'content-type': 'application/x-www-form-urlencoded', // 默认值
-          'cookie':wx.getStorageSync("sessionid")//读取cookie
+          // 'cookie':wx.getStorageSync("sessionid")//读取cookie
         },
         success(res) {
+          wx.setStorageSync("sessionid", res.header["Set-Cookie"])
           console.log(res)
           if (res.data.seccess == true) {
             wx.setStorageSync(status, 1)
