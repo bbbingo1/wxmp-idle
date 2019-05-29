@@ -54,6 +54,7 @@ Page({
         'cookie': wx.getStorageSync("sessionid") //读取cookie
       },
       success(res) {
+        let data;
         //商品类别
         switch (res.data.type) {
           case 1:
@@ -112,7 +113,6 @@ Page({
         that.data.seller.name = res.data.poster.name;
         that.data.seller.descripe = res.data.poster.signature;
         that.data.relation_id = res.data.relation_id;
-        let data;
         that.setData({
           detail: that.data.detail,
           seller: that.data.seller,
