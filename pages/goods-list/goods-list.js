@@ -39,11 +39,14 @@ Page({
         }
       ],
       type:"",//获取到的商品类型
+      keyword:""  //获取到的商品关键字
     },
     onLoad:function(options){
 				var that = this;
         that.data.type = options.type;
-        wx.request({    //发送请求
+        that.data.keyword = options.keyword;
+        if(that.data.type == undefined){
+          wx.request({    //发送请求
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
             type: 'get',
             data: {
@@ -59,6 +62,25 @@ Page({
 							that.putData(res.data);
             }
           });
+        }else if(that.data.keyword == undefined){
+          wx.request({    //发送请求
+            url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
+            type: 'get',
+            data: {
+              type: that.data.type,
+              page: 1,
+            },
+            header: {
+              'content-type': 'application/json', // 默认值
+              'cookie':wx.getStorageSync("sessionid")//读取cookie
+            },
+            success(res) {
+              console.log(res.data);
+							that.putData(res.data);
+            }
+          });
+        }
+
 			},
 			putData:function(data){
 				var that = this;

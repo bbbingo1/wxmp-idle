@@ -7,7 +7,7 @@ Component({
 				// 通常 newVal 就是新设置的数据， oldVal 是旧数据
 				this.setData({
 					dataList: this.properties.dataprop,
-					dataSet: this.data.dataList['nearby'] //初始化页面的列表
+					dataSet: this.data.dataList['food'] //初始化页面的列表
 				})
 			}
 		}
@@ -16,12 +16,6 @@ Component({
 		TabCur: 0,
 		scrollLeft: 0,
 		navList: [{
-			name: "附近",
-			Egname: "nearby"
-		  }, {
-			name: "推荐",
-			Egname: "Recommend"
-		  }, {
 			name: "食品",
 			Egname: "food"
 		  }, {
@@ -48,6 +42,8 @@ Component({
 		  }],
 		brick_option: {
 			backgroundColor: '#000',
+			defaultExpandStatus:true,
+			mageFillMode:"center",
 			fontColor: '#333',
 			icon: {
 				fill: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558804821537&di=8ee6235288fcda4f283e7c00b6559afd&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fcf3f35b88beb7236f6fcdb6a9c2f0729a0a1b4313911-ie3tVL_fw658',
@@ -143,7 +139,9 @@ Component({
 	/**
 * 生命周期函数--监听页面加载
 */
-	ready: function (options) {
+
+	ready(){
+
 	},
 	methods: {
 		tabSelect(e) {
@@ -153,14 +151,14 @@ Component({
 				dataSet: this.data.dataList[this.data.navList[e.currentTarget.dataset.id].Egname]
 			})
 		},
-		tapCard: function (event) {
+		tapCard: function (event,a) {
 			const cardId = event.detail.card_id
-			console.log(event);
+			console.log(event,a);
 			// code here.
 			var that = this;
 			console.log(that.data.dataSet)
 			wx.navigateTo({
-				url: "/pages/goods-detail/index?goods_id=" + that.data.dataSet[cardId - 31].id
+				url: "/pages/goods-detail/index?goods_id=" + cardId
 			});
 		},
 	},
