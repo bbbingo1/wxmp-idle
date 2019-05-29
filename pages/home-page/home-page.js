@@ -1,4 +1,6 @@
 // pages/home-page/home-page.js
+let app = getApp()
+
 Page({
 
   /**
@@ -135,6 +137,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    app.globalData.currentRouter = this.route
+    console.log(app.globalData.currentRouter)
   },
 
   /**

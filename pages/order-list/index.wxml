@@ -7,11 +7,11 @@
   </scroll-view>
   <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
     <swiper-item wx:for="{{[0,1,2,3]}}">
-      <view class="header" hidden="{{hideHeader}}">
+      <!-- <view class="header" hidden="{{hideHeader}}">
         <view>下拉刷新中……</view>
-        <!-- <view>{{refreshTime}}</view> -->
-      </view>
-      <scroll-view scroll-y="true" class="scoll-h" bindscrolltoupper="refresh" bindscrolltolower="loadMore" lower-threshold="{{lowerThreshold}}" upper-threshold="{{upperThreshold}}">
+        <view>{{refreshTime}}</view>
+      </view> -->
+      <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadMore" lower-threshold="{{lowerThreshold}}">
         <!-- 无订单情况 -->
         <view class="no-order" wx:if="{{!orderList[index].length&&hideHeader}}">
           <image src="/images/no-order.png" class="no-order-img"></image>
