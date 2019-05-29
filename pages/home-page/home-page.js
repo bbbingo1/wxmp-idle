@@ -71,7 +71,7 @@ Page({
           return;
         }
         if(res.data.total != 0){
-          for (let i = 0; i < 1; i++) { //只放一张图片
+          for (let i = 0; i < res.data.goods.length; i++) {
             let item = {
               id: '1',
               content:
@@ -92,9 +92,10 @@ Page({
             item.content = res.data.goods[i].describe;
             item.user.username = res.data.goods[i].name;
             item.images = [];
-            Object.keys(res.data.goods[i].picture).forEach(function (key) {
+/*             Object.keys(res.data.goods[i].picture).forEach(function (key) {
               item.images.push("https://liyan6987.cn/static/" + res.data.goods[i].picture[key]);
-            })
+            }) */
+            item.images.push("https://liyan6987.cn/static/" + res.data.goods[i].picture[0]);
             item.likedCount = res.data.goods[i].price;
             that.data.dataList[that.data.navList[type - 1].Egname].push(item);
           }
