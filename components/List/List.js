@@ -9,17 +9,17 @@ Component({
           icon: 'mobilefill',
           color: 'orange',
           badge: 1,
-          name: '手机'
+          name: '数码产品'
         }, {
           icon: 'game',
           color: 'yellow',
           badge: 0,
-          name: '游戏'
+          name: '玩具乐器'
         },{
-          icon: 'taxi',
+          icon: 'shopfill',
           color: 'mauve',
           badge: 0,
-          name: '汽车'
+          name: '生活用品'
         }, {
           icon: 'noticefill',
           color: 'olive',
@@ -59,9 +59,17 @@ Component({
           console.log(e);
           var that = this;
           var index = e.currentTarget.dataset.idx
+          var truIndex = 1  //真正要传过去的type编号
           console.log(index);
+          switch(that.data.iconList[index].name){
+            case "生活用品":truIndex = 4;break;
+            case "图书":truIndex = 1;break;
+            case "玩具乐器":truIndex = 6;break;
+            case "数码产品":truIndex = 7;break;
+            default:truIndex = 1;break;
+          }
           wx.navigateTo({
-            url:"/pages/goods-list/goods-list?type=" + that.data.iconList[index].name + "&page=" + 0 
+            url:"/pages/goods-list/goods-list?type=" + truIndex + "&page=" + 0 
           });
         }
       }

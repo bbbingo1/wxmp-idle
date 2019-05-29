@@ -9,4 +9,5 @@
 	bind:tapCard="tapCard"
 	class="margin-top text-black text-center"
 	style="color:black!important; margin-top:300px!important;"
+  data-idx='{{index}}'
   />

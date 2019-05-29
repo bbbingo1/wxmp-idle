@@ -27,12 +27,6 @@ Page({
       OfficeEquipment:[],
     },
     navList: [{
-      name: "附近",
-      Egname: "nearby"
-    }, {
-      name: "推荐",
-      Egname: "Recommend"
-    }, {
       name: "食品",
       Egname: "food"
     }, {
@@ -77,13 +71,12 @@ Page({
           return;
         }
         if(res.data.total != 0){
-          for (let i = 0; i < res.data.goods.length; i++) {
+          for (let i = 0; i < 1; i++) { //只放一张图片
             let item = {
               id: '1',
               content:
                 '',
               backgroundColor: '#fff',
-              time: 1533106010,
               likedCount: 0,
               liked: false,
               user: {
@@ -103,7 +96,7 @@ Page({
               item.images.push("https://liyan6987.cn/static/" + res.data.goods[i].picture[key]);
             })
             item.likedCount = res.data.goods[i].price;
-            that.data.dataList[that.data.navList[type + 1].Egname].push(item);
+            that.data.dataList[that.data.navList[type - 1].Egname].push(item);
           }
           that.setData({  //必须要这样设置一下dataList的变化才会传到子组去
             dataList: that.data.dataList
@@ -116,6 +109,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     this.loadList(1, 1);
     this.loadList(2, 1);
     this.loadList(3, 1);
