@@ -42,6 +42,7 @@ Page({
       keyword:""  //获取到的商品关键字
     },
     onLoad:function(options){
+      console.log(options);
 				var that = this;
         that.data.type = options.type;
         that.data.keyword = options.keyword;
@@ -50,7 +51,7 @@ Page({
             url: 'https://liyan6987.cn/goods/get_goods_list', // 仅为示例，并非真实的接口地址
             type: 'get',
             data: {
-              keyword: that.data.type,
+              keyword: that.data.keyword,
               page: 1,
             },
             header: {
