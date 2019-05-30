@@ -61,7 +61,7 @@ Page({
     })
     let status = checkLogin();
     if (!status) {
-      wx.navigateTo({
+      wx.navigateTo({  
         url: '/pages/login/index',
         success: function(res) {},
         fail: function(res) {},

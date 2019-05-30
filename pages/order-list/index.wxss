@@ -1,6 +1,6 @@
 /* pages/order-list/index.wxss */
 
-.header,.bottom {
+.header, .bottom {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +10,7 @@
   font-size: 28rpx;
   padding: 5rpx 0;
 }
+
 .tab-h {
   box-sizing: border-box;
   overflow: hidden;
@@ -126,7 +127,11 @@
 .expertInfo .name {
   font-size: 30rpx;
   color: #000;
-  margin-bottom: 14rpx;
+  margin-bottom: 4rpx;
+}
+
+.expertInfo .price {
+  color: rgb(226, 57, 65);
 }
 
 .askBtn {

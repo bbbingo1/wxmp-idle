@@ -35,7 +35,7 @@
     </view>
     <view class='type-block'>
       <view class="cu-form-group">
-        <view class="title">普通选择</view>
+        <view class="title">类型选择</view>
         <picker bindchange="PickerChange" value="{{type_index-1}}" range="{{picker}}">
           <view class="picker">{{type_index?picker[type_index-1]:'请选择类型'}}</view>
         </picker>

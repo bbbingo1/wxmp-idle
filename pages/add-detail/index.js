@@ -25,7 +25,7 @@ Page({
     title: "",
     descripe: '',
     price: '',
-    type_index: 8,
+    type_index: null,
     picker: ['食物', '服饰', '图书', '生活用品', '办公用品', '玩具乐器', '数码用品', '其他'],
     loadModal: false,
     load_text: "正在上传信息"

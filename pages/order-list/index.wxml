@@ -13,7 +13,7 @@
       </view> -->
       <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadMore" lower-threshold="{{lowerThreshold}}">
         <!-- 无订单情况 -->
-        <view class="no-order" wx:if="{{!orderList[index].length&&hideHeader}}">
+        <view class="no-order" wx:if="{{!orderList[index].length}}">
           <image src="/images/no-order.png" class="no-order-img"></image>
           <view class="text">暂无订单</view>
         </view>
@@ -26,7 +26,7 @@
               </view>
               <view class="expertInfo">
                 <view class="name">{{item.name}}</view>
-                <view class="type">{{item.type}}</view>
+                <view class="price">￥{{item.price}}</view>
                 <view class="poster">{{item.poster.name}}，{{item.poster.signature}}</view>
               </view>
               <navigator catchtap="tapChat" url="" class="askBtn">问TA</navigator>

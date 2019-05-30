@@ -26,9 +26,9 @@ App({
           method: 'post',
           header: header,
           success(res) {
-            wx.setStorageSync("sessionid", res.header["Set-Cookie"])
             // console.log(res)
             if (res.data.status == true) {
+              wx.setStorageSync("sessionid", res.header["Set-Cookie"])
               that.globalData.user = res.data.user
               // console.log(that.globalData.user)
               wx.setStorageSync('openid', res.data.user.openid)
@@ -86,7 +86,6 @@ App({
     currentRouter:null,
     userInfo: null,
     user: null,
-    openId: null,
     studentId: null,
     js_code: null,
     globalBGColor: '#0BDDB8 ',

@@ -5,7 +5,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" style="height:600rpx">
       <block wx:for="{{detail.imgs}}" wx:key="*this" wx:if="{{index<6}}">
         <swiper-item>
-          <image class="swiper-item" src='{{item}}'></image>
+          <image class="swiper-item" src='{{item}}' bindtap="previewImg"></image>
         </swiper-item>
         <!-- <view class='swiper-doc' style='background:blue;'>{{index}}/1231</view> -->
       </block>
@@ -35,7 +35,7 @@
       <!-- 图片 -->
       <view class='imgs'>
         <view wx:for="{{detail.imgs}}" wx:key="*this" class='goods_imgs'>
-          <image class="goods_img" src='{{item}}'></image>
+          <image class="goods_img" src='{{item}}' bindtap="previewImg"></image>
         </view>
       </view>
     </view>
