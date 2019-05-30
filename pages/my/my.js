@@ -16,18 +16,22 @@ Page({
     email: 'tuji101@gmail.com',
     version: 'v1.0.0',
     libVersion: 'v2.6.6',
-    copyright: 'PickledFish_Tuji101'
+    copyright: 'PickledFish_Tuji101',
+    show: 0
   },
 
-    /**
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let item = this.data.userInfo;
+    item.nickName = app.globalData.user.name
     this.setData({
       background_color: app.globalData.globalBGColor,
       bgRed: app.globalData.bgRed,
       bgGreen: app.globalData.bgGreen,
-      bgBlue: app.globalData.bgBlue
+      bgBlue: app.globalData.bgBlue,
+      userInfo: item
     })
     let userInfo = getStorageSync('userInfo')
     if (userInfo.nickName) {
@@ -54,20 +58,12 @@ Page({
   },
 
   onGotUserInfo: function(e) {
+    console.log(e.detail.userInfo)
     let userInfo = e.detail.userInfo
     setStorageSync('userInfo', userInfo)
     this.setData({
       userInfo
     })
-    let status = checkLogin();
-    if (!status) {
-      wx.navigateTo({  
-        url: '/pages/login/index',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
-      })
-    }
   },
   //跳转
   getOrder: function(e) {
@@ -80,24 +76,33 @@ Page({
     //     complete: function(res) {},
     //   })
     // } else {
-      wx.navigateTo({
-        url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
-      })
+    wx.navigateTo({
+      url: '/pages/order-list/index?type=' + e.currentTarget.dataset.type,
+    })
     // }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
+    let that = this
     app.globalData.currentRouter = this.route
-    console.log(app.globalData.currentRouter)
+    setTimeout(function() {
+      that.setData({
+        show: 1
+      })
+    }, 200)
   },
+  onHide: function() {
+    let that = this
+    this.setData({
+      show: 0
+    })
+  }
 })

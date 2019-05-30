@@ -13,7 +13,7 @@
 .btn-getInfo {
   width: 100%;
   border-radius: 0;
-  background: #fff;
+  background: #496966;
   font-size: 30rpx;
-  color: #555;
+  color: #fff;
 }

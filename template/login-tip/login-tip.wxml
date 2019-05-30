@@ -1,6 +1,6 @@
 <!-- 登录提示/未登录时显示 -->
 <template name="logintip">
   <view class="user-feature">
-    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn-getInfo">点击登录,解锁更多功能 </button>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn-getInfo">点击获取头像等信息 </button>
   </view>
 </template>

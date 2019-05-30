@@ -1,6 +1,10 @@
 // pages/order-list/index.js
-var page = [1, 1, 1, 1];//分页标识：第几次获取（当前页数）
-var allPages = [1, 1, 1, 1];//分页标识：总页数
+import {
+  turnToLogin
+} from '../../lib/loginRequire.js'
+
+var page = [1, 1, 1, 1]; //分页标识：第几次获取（当前页数）
+var allPages = [1, 1, 1, 1]; //分页标识：总页数
 Page({
 
   /**
@@ -8,7 +12,7 @@ Page({
    */
   data: {
     currentTab: 0, //预设当前项的值
-    relation_id: 1,//发请求用：1:卖出;2:发布;3:喜欢
+    relation_id: 1, //发请求用：1:卖出;2:发布;3:喜欢
     statusType: ["我发布的", "我卖出的", "我买到的", "我想要的"],
     winHeight: "", //窗口高度
     scrollLeft: 0, //tab标题的滚动条位置
@@ -23,7 +27,7 @@ Page({
   },
 
   // 滚动切换标签样式
-  switchTab: function (e) {
+  switchTab: function(e) {
     this.setData({
       currentTab: e.detail.current
     });
@@ -41,7 +45,7 @@ Page({
   },
 
   // 点击标题切换当前页时改变样式
-  swichNav: function (e) {
+  swichNav: function(e) {
     var cur = e.target.dataset.index;
     if (this.data.currentTab == cur) {
       return false;
@@ -62,7 +66,7 @@ Page({
     }
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
-  checkCor: function () {
+  checkCor: function() {
     if (this.data.currentTab > 4) {
       this.setData({
         scrollLeft: 300
@@ -75,7 +79,7 @@ Page({
   },
 
   //跳转
-  getOrder: function (e) {
+  getOrder: function(e) {
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '/pages/goods-detail/index?goods_id=' + e.currentTarget.dataset.id,
@@ -83,14 +87,14 @@ Page({
   },
 
   //跳转聊天
-  tapChat: function () {
+  tapChat: function() {
     wx.navigateTo({
       url: "/components/chat/chat"
     });
   },
 
   //清除页面数据
-  clearCache: function (index) {
+  clearCache: function(index) {
     if (index) {
       //下拉刷新时清除指定页面
       page[index] = 1;
@@ -99,18 +103,22 @@ Page({
       this.setData({
         orderList: item
       })
-    }
-    else {
+    } else {
       //初始化所有数据
-      page = [1, 1, 1, 1];//分页标识归零
+      page = [1, 1, 1, 1]; //分页标识归零
       this.setData({
-        orderList: [[], [], [], []] //文章列表数组清空
+        orderList: [
+          [],
+          [],
+          [],
+          []
+        ] //文章列表数组清空
       });
     }
   },
 
   //scroll-view监听用户下拉刷新动作
-  refresh: function () {
+  refresh: function() {
     var that = this;
     let currentTab = that.data.currentTab
     // console.log('下拉刷新');
@@ -125,7 +133,7 @@ Page({
   },
 
   //scroll-view页面上拉触底事件的处理函数
-  loadMore: function () {
+  loadMore: function() {
     var that = this;
     var currentTab = that.data.currentTab
     if (that.data.orderList[currentTab].length) {
@@ -134,26 +142,32 @@ Page({
       that.setData({
         hideBottom: false
       })
-      that.getUserGoods(Number(currentTab), page_index);//后台获取新数据并追加渲染
+      that.getUserGoods(Number(currentTab), page_index); //后台获取新数据并追加渲染
     }
   },
 
   //获取页面数据
-  getUserGoods: function (currentTab, pg = 1, tip = 0) {
+  getUserGoods: function(currentTab, pg = 1, tip = 0) {
     //currentTab表示当前导航值；pg表示当前要加载页数(一页10个)。传0返回全部，不传默认第一页；tip可选，默认为0
     // console.log(page)
     let that = this;
     if (currentTab != undefined) {
       let relation_id = 1;
       switch (currentTab) {
-        case 0: relation_id = 2; break;
-        case 1: relation_id = 1; break;
-        // case 2: relation_id = 4;break;
-        case 3: relation_id = 3; break;
+        case 0:
+          relation_id = 2;
+          break;
+        case 1:
+          relation_id = 1;
+          break;
+          // case 2: relation_id = 4;break;
+        case 3:
+          relation_id = 3;
+          break;
       }
       let header = {
         'content-type': 'application/json',
-        'cookie': wx.getStorageSync("sessionid")//读取cookie
+        'cookie': wx.getStorageSync("sessionid") //读取cookie
       };
       wx.request({
         url: 'https://liyan6987.cn/user/get_user_goods',
@@ -167,7 +181,7 @@ Page({
           if (res.statusCode == 200) {
             if (pg == 1) {
               //初始加载/下拉刷新
-              setTimeout(function () {
+              setTimeout(function() {
                 // allPages[currentTab] = res.data.allpages;
                 let item = that.data.orderList;
                 item[currentTab] = res.data.goods;
@@ -176,8 +190,7 @@ Page({
                   // hideHeader: true
                 })
               }, 400)
-            }
-            else {
+            } else {
               //上拉触底获取更多
               if (res.data.total == 0) {
                 //已经是最后一页
@@ -185,9 +198,8 @@ Page({
                   loadMoreData: '已经到底喽~'
                 })
                 return;
-              }
-              else {
-                setTimeout(function () {
+              } else {
+                setTimeout(function() {
                   console.log('加载更多');
                   // allPages[currentTab] = res.data.allpages;
                   let item = that.data.orderList;
@@ -200,7 +212,8 @@ Page({
               }
             }
             page[currentTab]++;
-          } else {
+          } else if (res.statusCode == 202) {
+            turnToLogin(res.data.message)
             // wx.showToast({
             //   title: '请求错误',
             //   icon: 'none',
@@ -217,7 +230,9 @@ Page({
             duration: 2000,
           })
         },
-        complete() { wx.stopPullDownRefresh() }
+        complete() {
+          wx.stopPullDownRefresh()
+        }
       })
     }
   },
@@ -225,7 +240,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     let that = this;
 
     //页面跳转
@@ -251,7 +266,7 @@ Page({
 
     //  高度自适应
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         var clientHeight = res.windowHeight,
           clientWidth = res.windowWidth,
           rpxR = 750 / clientWidth;
@@ -266,41 +281,41 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.refresh();
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

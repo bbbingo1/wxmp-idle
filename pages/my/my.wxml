@@ -3,7 +3,7 @@
   <!-- 用户信息 -->
   <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
     <!-- 头像框+用户名 -->
-    <view class='userinfo'>
+    <view class='userinfo {{show!=0?"fadeIn":""}}'>
       <view>
         <image class="avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFill"></image>
       </view>
@@ -11,10 +11,10 @@
         <text class="username">{{userInfo.nickName}}</text>
       </view>
     </view>
-    <template is="logintip" bind:myEvent="onGotUserInfo" wx:if="{{!userInfo.nickName}}"></template>
   </view>
-  <view class="my_box" id='my_box1' wx:if="{{userInfo.nickName}}">
-    <view class='my_box_container' id='my_box1_container'>
+  <view class='my_box {{show!=0?"sticky":""}}' id='my_box1'>
+      <template is="logintip" bind:myEvent="onGotUserInfo" wx:if="{{!userInfo.avatarUrl}}"></template>
+    <view class='my_box_container' id='my_box1_container'  wx:if="{{userInfo.avatarUrl}}">
       <view class="my_box__item">
         全部订单
       </view>
@@ -24,7 +24,7 @@
       </view>
     </view>
   </view>
-  <view class='my_box' id='my_box2' wx:if="{{userInfo.nickName}}">
+  <view class='my_box {{show!=0?"sticky":""}}' id='my_box2'>
     <view class='my_box_title'>我的交易
     </view>
     <view class='my_box_container' id='my_box2_container'>
@@ -54,7 +54,7 @@
       </view>
     </view>
   </view>
-  <view class='my_box' id='my_box3' wx:if="{{userInfo.nickName}}">
+  <view class='my_box {{show!=0?"sticky":""}}' id='my_box3'>
     <view class='my_box_title'>我的推广
     </view>
     <view class='my_box_container' id='my_box3_container'>
@@ -78,7 +78,7 @@
       </view>
     </view>
   </view>
-  <view class='my_box' id='my_box4' wx:if="{{userInfo.nickName}}">
+  <view class='my_box {{show!=0?"sticky":""}}' id='my_box4'>
     <view class='my_box_title'>我的服务
     </view>
     <view class='my_box_container' id='my_box4_container'>

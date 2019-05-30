@@ -247,3 +247,7 @@
   font-size: 34rpx;
   border-radius: 12rpx;
 }
+
+. {
+  animation-duration: 399ms !important;
+}

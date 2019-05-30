@@ -1,4 +1,5 @@
 @import "../../template/login-tip/login-tip.wxss";
+
 /* 页面配置 */
 
 page {
@@ -26,6 +27,9 @@ page {
 
 .userinfo {
   z-index: 3;
+  opacity: 0;
+  /* transition-delay: 1s; */
+  transform: translateY(-50%) scale(0);
 }
 
 /* 头像 */
@@ -55,7 +59,6 @@ page {
   color: rgba(75, 75, 75, 0.925);
 }
 
-
 /* 模块 */
 
 .my_box {
@@ -68,6 +71,33 @@ page {
   box-sizing: border-box;
   box-shadow: 2px 2px 8px #ccc;
   z-index: 2;
+  opacity: 0;
+  transform: rotateY(90deg) scale(0);
+  /* animation: flip 1s 0s ease-out both; *//* animation-fill-mode: forwards; */
+}
+
+.sticky {
+  transition: all 1s;
+  opacity: 1;
+  transform: rotateY(360deg) scale(1);
+}
+
+.fadeIn {
+  transition: all 1s;
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+}
+
+@keyframes flip {
+  0% {
+    opacity: 0;
+    transform: rotateY(0deg) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(1080deg) scale(1);
+  }
 }
 
 #my_box1 {
@@ -110,15 +140,17 @@ page {
   margin-top: 15%;
 }
 
-#my_box2_container,#my_box3_container,#my_box4_container{
+#my_box2_container, #my_box3_container, #my_box4_container {
   margin-bottom: 2%;
 }
-.my_box_title{
+
+.my_box_title {
   margin-top: 2%;
   margin-bottom: 3%;
   font-size: 28rpx;
   color: rgb(29, 29, 29);
 }
+
 .my_box__item {
   cursor: pointer;
   padding-top: 6%;
@@ -131,19 +163,21 @@ page {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top:-1%;
+  margin-top: -1%;
 }
 
-#my_box2_container .my_box__item .icon,#my_box4_container .my_box__item .icon {
+#my_box2_container .my_box__item .icon, #my_box4_container .my_box__item .icon {
   width: 50rpx;
   height: 50rpx;
   margin-bottom: 18rpx;
 }
+
 #my_box3_container .my_box__item .icon {
   width: 65rpx;
   height: 65rpx;
   margin-bottom: 18rpx;
 }
+
 .about {
   /* position: absolute;
   bottom: 20rpx; */

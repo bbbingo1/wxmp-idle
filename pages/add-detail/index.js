@@ -1,4 +1,7 @@
 // pages/add-detail/index.js
+import {
+  turnToLogin
+} from '../../lib/loginRequire.js'
 const app = getApp()
 
 Page({
@@ -188,14 +191,7 @@ Page({
         success(res) {
           //发送失败：未登录等原因
           if (res.data.status == false) {
-            if (res.data.status == "login required") {
-              wx.navigateTo({
-                url: '/pages/login/index',
-                success: function (res) { },
-                fail: function (res) { },
-                complete: function (res) { },
-              })
-            }
+            turnToLogin(res.data.message)
             wx.showToast({
               title: res.data.message,
               icon: 'none',
@@ -264,7 +260,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(!wx.getStorageSync("sessionid")){
+      turnToLogin('login required')
+    }
   },
 
   /**
